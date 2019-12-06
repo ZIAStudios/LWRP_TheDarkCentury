@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - P_Aldeano
+  - P_Caballero
+  - P_Lancero
+  - P_Arquero
+  - E_Aldeano
+  - E_Caballero
+  - E_Lancero
+  - E_Arquero
+  - B_Espaderos1
+  - B_Esapderos2
+  - B_Esapderos3
+  - B_Lanceros1
+  - B_Lanceros2
+  - B_Lanceros3
+  - B_Arqueros1
+  - B_Arqueros2
+  - B_Arqueros3
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Ground
+  - Player
+  - Enemy
+  - Building
+  - Sub Building
+  - Flag
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
