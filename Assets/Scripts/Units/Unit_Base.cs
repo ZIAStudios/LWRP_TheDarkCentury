@@ -252,7 +252,14 @@ public class Unit_Base : MonoBehaviour
 
         }
 
-        gameObject.SetActive(false);
+		float hitSound = Random.Range(0, 4);
+		if (hitSound <= 2)
+		{
+			//FindObjectOfType<AudioManager>().Play("Muerte");
+		}
+
+
+		gameObject.SetActive(false);
         transform.position = new Vector3 (transform.position.x, -100, transform.position.z);
         //------------------------------------------------------------------> Implementar reseteo de stats al morir
 
