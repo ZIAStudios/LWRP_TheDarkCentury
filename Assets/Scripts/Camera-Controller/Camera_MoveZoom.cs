@@ -5,9 +5,9 @@ using UnityEngine;
 public class Camera_MoveZoom : MonoBehaviour
 {
     [Header("Camera Move XZ (WASD)")]
-    [SerializeField] float xspeed = 10f;
-    [SerializeField] float zspeed = 10f;
-    [SerializeField] float interpolationSpeed = 1;
+    [SerializeField] float xspeed = 1f;
+    [SerializeField] float zspeed = 1f;
+    [SerializeField] float interpolationSpeed = 10f;
     Vector3 inputVector;
     Vector3 moveSpeed = Vector3.zero;
     
