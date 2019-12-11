@@ -18,13 +18,17 @@ public class Flag : MonoBehaviour
 
 	GameObject playerFlag;
 	GameObject enemyFlag;
+    GameObject neutralFlag;
 
-	private void Start()
+
+    private void Start()
 	{
 		playerFlag = gameObject.transform.GetChild(0).gameObject;
 		enemyFlag = gameObject.transform.GetChild(1).gameObject;
+        neutralFlag = gameObject.transform.GetChild(2).gameObject;
 
-		playerFlag.SetActive(false);
+        neutralFlag.SetActive(true);
+        playerFlag.SetActive(false);
 		enemyFlag.SetActive(false);
 	}
 
@@ -36,15 +40,18 @@ public class Flag : MonoBehaviour
 		{
 			playerFlag.SetActive(true);
 			enemyFlag.SetActive(false);
+            neutralFlag.SetActive(false);
 		}
 
 		if (flagState == Zone.STATE.AI)
 		{
 			playerFlag.SetActive(false);
 			enemyFlag.SetActive(true);
-		}
+            neutralFlag.SetActive(false);
 
-	}
+        }
+
+    }
 
     void FlagCapture()
     {
