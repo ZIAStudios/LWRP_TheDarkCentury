@@ -21,6 +21,9 @@ TagManager:
   - B_Arqueros1
   - B_Arqueros2
   - B_Arqueros3
+  - SB_Slots
+  - SB_Defense
+  - SB_Attack
   layers:
   - Default
   - TransparentFX
