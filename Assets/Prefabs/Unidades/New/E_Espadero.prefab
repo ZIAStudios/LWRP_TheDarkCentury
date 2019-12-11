@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 8939513379880674690}
   m_Layer: 11
   m_Name: E_Espadero
-  m_TagString: Untagged
+  m_TagString: E_Caballero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

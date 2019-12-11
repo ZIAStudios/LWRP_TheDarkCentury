@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 1404874515238576965}
   m_Layer: 10
   m_Name: P_Espadero
-  m_TagString: Untagged
+  m_TagString: P_Caballero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
