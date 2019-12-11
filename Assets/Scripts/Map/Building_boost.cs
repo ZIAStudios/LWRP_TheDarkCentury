@@ -54,8 +54,8 @@ public class Building_boost : MonoBehaviour
                 if (inside.tag == "P_Villager")
                 {
                     villagersWorking++;
-
-                    switch (unitUpgrade)
+					FindObjectOfType<AudioManager>().Play("CampesinoTrabajando");
+					switch (unitUpgrade)
                     {
                         case Upgrade.Slot:
                             building.GetComponent<Building>().activeSlot = true;
@@ -87,6 +87,8 @@ public class Building_boost : MonoBehaviour
             if (outside.tag == "P_Villager")
             {
                 villagersWorking--;
+
+				FindObjectOfType<AudioManager>().Stop("CampesinoTrabajando");
 
                 switch (unitUpgrade)
                 {
