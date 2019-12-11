@@ -199,11 +199,11 @@ public class States_Melee : MonoBehaviour
 		float hitSound = Random.Range(0, 4);
 		if (hitSound <= 2)
 		{
-			//FindObjectOfType<AudioManager>().Play("Combate");
+			FindObjectOfType<AudioManager>().Play("combate");
 		}
 		else
 		{
-			//FindObjectOfType<AudioManager>().Play("Combate1");
+			FindObjectOfType<AudioManager>().Play("combate1");
 		}
 
 		bestTarget.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
