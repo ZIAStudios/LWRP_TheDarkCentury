@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -8,30 +9,40 @@ public class PauseMenu : MonoBehaviour
     public GameObject menuPausa;
     public bool pausado;
 
+   
+
+    public GameObject texto1;
+    public GameObject texto2;
+    
     void Start()
     {
-        
+        /*pausado = true;
+        Time.timeScale = 0f;
+
+        texto2.SetActive(false);
+        texto1.SetActive(true);*/
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Time.timeScale);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pausado)
             {
-                Resume();
-                
+                Resume();                
             }
             else
             {
-                Pause();
-               
+                Pause();      
             }
         }
+
     }
 
-    void Resume()
+    public void Resume()
     {
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
@@ -56,4 +67,19 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void Siguiente_1()
+    {
+        texto1.SetActive(false);
+        texto2.SetActive(true);
+
+        Debug.Log("Hola");
+    }
+
+    public void Siguiente_2()
+    {
+        texto1.SetActive(true);
+        texto2.SetActive(false);
+    }
+
 }
