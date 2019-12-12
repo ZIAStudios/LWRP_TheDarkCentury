@@ -26,17 +26,6 @@ public class Pause_Enemigos : MonoBehaviour
     {
         Debug.Log(Time.timeScale);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (pausado)
-            {
-                Resume();                
-            }
-            else
-            {
-                Pause();      
-            }
-        }
     }
 
     public void Resume()
