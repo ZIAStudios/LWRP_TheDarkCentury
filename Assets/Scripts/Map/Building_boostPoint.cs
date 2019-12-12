@@ -8,7 +8,7 @@ public class Building_boostPoint : MonoBehaviour
     {
         gameObject.GetComponentInParent<Building_boost>().EnterTrigger(c);
     }
-        void OnTriggerExit(Collider c)
+    void OnTriggerExit(Collider c)
     {
         gameObject.GetComponentInParent<Building_boost>().ExitTrigger(c);
     }

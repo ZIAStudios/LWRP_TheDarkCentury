@@ -49,11 +49,14 @@ public class Building_boost : MonoBehaviour
     {
         if (boostBuildingState == Zone.STATE.Player)
         {
-            if (villagersWorking != maxVillagersWorking)
+            if (villagersWorking <= maxVillagersWorking)
             {
-                if (inside.tag == "P_Villager")
+				print("llega1");
+                if (inside.tag == "P_Aldeano")
                 {
-                    villagersWorking++;
+					print("llega2");
+
+					villagersWorking++;
 					FindObjectOfType<AudioManager>().Play("CampesinoTrabajando");
 					switch (unitUpgrade)
                     {
@@ -84,7 +87,7 @@ public class Building_boost : MonoBehaviour
     {
         if (boostBuildingState == Zone.STATE.Player)
         {
-            if (outside.tag == "P_Villager")
+            if (outside.tag == "P_Aldeano")
             {
                 villagersWorking--;
 

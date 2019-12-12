@@ -48,9 +48,12 @@ public class Cursores : MonoBehaviour
 
 
 		}
+		if (mouseOnTop != null)
+		{
+			OnMouseExit();
+			OnMouseEnter();
+		}
 
-		OnMouseExit();
-		OnMouseEnter();
 		/*
         if (Physics.Raycast(ray2, out hit2, Mathf.Infinity))
         {
