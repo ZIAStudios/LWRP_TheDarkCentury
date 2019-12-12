@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Unit_Base : MonoBehaviour
 {
-    public Animator anim;
+	public Animator anim;
     UnitsManager objectPooler;
     Selectable selec;
     Building building;
@@ -25,7 +25,7 @@ public class Unit_Base : MonoBehaviour
     public int armor = 1;
     public int damage = 10;
     public float currentHealth;
-
+    
     [HideInInspector] public float startSpeed;
     [HideInInspector] public float startRotationSpeed;
     [HideInInspector] public float startAcceleration;
@@ -43,13 +43,13 @@ public class Unit_Base : MonoBehaviour
     float time = 0.1f;
     float startTime = 0.1f;
 
-    Vector3 lastPos;
+	Vector3 lastPos;
 
 
-    private void Awake()
+	private void Awake()
     {
-        anim = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+		anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();   
         selec = GetComponentInChildren<Selectable>();
 
 
@@ -89,75 +89,105 @@ public class Unit_Base : MonoBehaviour
                 time = startTime;
                 anim.SetBool("TakeDamage", false);
             }
-        }
+        }  
 
 
         MoveToPoint();
+
+		if (gameObject.tag == "P_Aldeano" || gameObject.tag == "E_Aldeano")
+		{
+			Animations();
+		}
     }
 
 
     #region MoveToPoint() - Moves the object if it's selected
-    public void MoveToPoint()
+    public void MoveToPoint ()
     {
         if (selec.isSelected && Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 400, LayerMask.NameToLayer("Enemy")))
-            {
-                print("Hit Enemy");
+			if (Physics.Raycast(ray, out hit, 400, LayerMask.NameToLayer("Enemy")))
+			{
+				print("Hit Enemy");
 
+				float hitSound = Random.Range(0, 25);
+				if (hitSound <= 2)
+				{
+					FindObjectOfType<AudioManager>().Play("Yes");
+				}
+				if (hitSound > 2 && hitSound <= 4)
+				{
+					if (gameObject.tag != "P_Aldeano")
+					{
+						FindObjectOfType<AudioManager>().Play("MovSoldado");
+					}
+					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
+				}
 
+				if (gameObject.GetComponent<States_Melee>() != null)
+				{
+					if (hit.collider.gameObject.GetComponentInParent<Positions>().positionsInUse < 6)
+					{			
+						//hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
+						
+						//gameObject.GetComponent<States_Melee>().bestTarget = hit.collider.transform.parent.gameObject;
+						//MoveAt(hit.collider.gameObject.transform.position);
+						gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
+						print(hit.collider.transform.parent.gameObject.name);
+					}
+				}
+				//else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
+				//gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
 
-                if (gameObject.GetComponent<States_Melee>() != null)
-                {
-                    if (hit.collider.gameObject.GetComponentInParent<Positions>().positionsInUse < 6)
-                    {
-                        //hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
+			}
+			else if (Physics.Raycast(ray, out hit, 200, movementMask))
+			{
 
-                        //gameObject.GetComponent<States_Melee>().bestTarget = hit.collider.transform.parent.gameObject;
-                        //MoveAt(hit.collider.gameObject.transform.position);
-                        gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
-                        print(hit.collider.transform.parent.gameObject.name);
-                    }
-                }
-                //else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
-                //gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
+				float hitSound = Random.Range(0, 25);
+				if (hitSound <= 2)
+				{
+					FindObjectOfType<AudioManager>().Play("Yes");
+				}
+				if (hitSound > 2 && hitSound <= 4)
+				{
+					if (gameObject.tag != "P_Aldeano")
+					{
+						FindObjectOfType<AudioManager>().Play("MovSoldado");
+					}
+					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
+				}
 
-            }
-            else if (Physics.Raycast(ray, out hit, 200, movementMask))
-            {
-                print("Select and click");
+				if (gameObject.GetComponent<States_Melee>() != null)
+				{
+					if (gameObject.GetComponent<States_Melee>().state != States_Melee.State.normal)
+					{
+						gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
+					}
 
-                if (gameObject.GetComponent<States_Melee>() != null)
-                {
-                    if (gameObject.GetComponent<States_Melee>().state != States_Melee.State.normal)
-                    {
-                        gameObject.GetComponent<States_Melee>().ignoreStates = true;
-                        gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
-                    }
+					if (gameObject.GetComponent<States_Melee>().bestTarget != null)
+					{
+						gameObject.GetComponent<States_Melee>().bestTarget = null;
+					}
+				}
 
-                    if (gameObject.GetComponent<States_Melee>().bestTarget != null)
-                    {
-                        gameObject.GetComponent<States_Melee>().bestTarget = null;
-                    }
-                }
+				//ESTO CAMBIARLO CUANDO SE QUEDE EL CÓDIGO NUEVO
+				if (gameObject.GetComponent<Unit_Melee>() != null)
+				{
+					if (gameObject.GetComponent<Unit_Melee>().enemyToChase != null)
+					{
+						gameObject.GetComponent<Unit_Melee>().enemyToChase = null;
+					}
+				}
+				
+				agent.SetDestination(hit.point);
+			}
 
-                //ESTO CAMBIARLO CUANDO SE QUEDE EL CÓDIGO NUEVO
-                if (gameObject.GetComponent<Unit_Melee>() != null)
-                {
-                    if (gameObject.GetComponent<Unit_Melee>().enemyToChase != null)
-                    {
-                        gameObject.GetComponent<Unit_Melee>().enemyToChase = null;
-                    }
-                }
-
-                agent.SetDestination(hit.point);
-            }
-
-            //Movimiento que hace el villager específico
-            if (gameObject.tag == "P_Villager")
+			//Movimiento que hace el villager específico
+			if (gameObject.tag == "P_Aldeano")
             {
                 if (Physics.Raycast(ray, out hit, 200, subBuilding))
                 {
@@ -165,29 +195,18 @@ public class Unit_Base : MonoBehaviour
                     if (hit.collider.GetComponent<Building_boost>().boostBuildingState == Zone.STATE.Player)
                     {
                         //-----------------------ESTO ESTA HARDCODEADO-> CAMBAIRLO
-                        if (hit.collider.GetComponent<Building_boost>().villagersWorking < 1)
+                        if(hit.collider.GetComponent<Building_boost>().villagersWorking < 1)
                         {
                             MoveAt(hit.collider.GetComponent<Building_boost>().spawnPoint);
 
-                        }
-                        else
+                        }else
                         {
                             MoveAt(transform.position);
                         }
                         //lista para ver que está llendo a la posición (la casa)
                     }
                 }
-
-                if (agent.hasPath)
-                {
-                    anim.SetBool("Move", true);
-                }
-                else
-                {
-                    anim.SetBool("Move", false);
-
-                }
-            }
+			}
         }
     }
     #endregion
@@ -202,7 +221,7 @@ public class Unit_Base : MonoBehaviour
     #region TakeDamage (int damage) - When it takes damage
     public void TakeDamage(float damage)
     {
-        damage = damage / armor;
+        damage = damage/armor;
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -255,11 +274,12 @@ public class Unit_Base : MonoBehaviour
 
         }
 
+		FindObjectOfType<AudioManager>().Play("Muerte");
+		
 
 
-
-        gameObject.SetActive(false);
-        transform.position = new Vector3(transform.position.x, -100, transform.position.z);
+		gameObject.SetActive(false);
+        transform.position = new Vector3 (transform.position.x, -100, transform.position.z);
         //------------------------------------------------------------------> Implementar reseteo de stats al morir
 
         Debug.Log(gameObject.name + " died.");
@@ -274,21 +294,23 @@ public class Unit_Base : MonoBehaviour
         Start();
     }
 
-    void Animations()
-    {
-        Vector3 curPos = transform.position;
-        if (curPos == lastPos)
-        {
-            anim.SetBool("Move", false);
-        }
-        else
-        {
-            lastPos = curPos;
-            anim.SetBool("Move", true);
-            anim.SetBool("Attacking", false);
+	void Animations()
+	{
+		Vector3 curPos = transform.position;
+		//if (curPos.x  >= lastPos.x - 0.0001 || curPos.x <= lastPos.x + 0.0001 || curPos.z >= lastPos.z - 0.0001 || curPos.z <= lastPos.z + 0.0001)
+		if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
+		//if (curPos == lastPos)
+		{
+			anim.SetBool("Move", false);
+		}
+		else
+		{
+			lastPos = curPos;
+			anim.SetBool("Move", true);
+			anim.SetBool("Attacking", false);
 
-        }
+		}
 
-    }
+	}
 
 }
