@@ -28,17 +28,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log(Time.timeScale);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (pausado)
-            {
-                Resume();                
-            }
-            else
-            {
-                Pause();      
-            }
-        }
+  
 
     }
 
@@ -78,8 +68,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Siguiente_2()
     {
-        texto1.SetActive(true);
-        texto2.SetActive(false);
+        menuPausa.SetActive(false);
     }
 
 }
