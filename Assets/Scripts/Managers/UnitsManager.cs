@@ -72,12 +72,10 @@ public class UnitsManager : MonoBehaviour
                     {
                         meleeToAdd = false;
                         break;
-
                     }
                     else
                     {
                         meleeToAdd = true;
-
                     }
                 }
                 if (meleeToAdd)
@@ -174,12 +172,12 @@ public class UnitsManager : MonoBehaviour
         {
             if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag)
             {
+				print("spawn " + tag);
                 return pooledObjects[i];
 
             }
         }
         return null;
-
     }
 
 }

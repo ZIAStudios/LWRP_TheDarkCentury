@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 548762566281212810}
   m_Layer: 10
   m_Name: P_Trabajador
-  m_TagString: P_Villager
+  m_TagString: P_Aldeano
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825e4e4aac57ef8468887d728f559f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   agent: {fileID: 0}
   movementMask:
     serializedVersion: 2

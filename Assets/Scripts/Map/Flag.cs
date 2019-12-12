@@ -18,13 +18,17 @@ public class Flag : MonoBehaviour
 
 	GameObject playerFlag;
 	GameObject enemyFlag;
+    GameObject neutralFlag;
 
-	private void Start()
+
+    private void Start()
 	{
 		playerFlag = gameObject.transform.GetChild(0).gameObject;
 		enemyFlag = gameObject.transform.GetChild(1).gameObject;
+        neutralFlag = gameObject.transform.GetChild(2).gameObject;
 
-		playerFlag.SetActive(false);
+        neutralFlag.SetActive(true);
+        playerFlag.SetActive(false);
 		enemyFlag.SetActive(false);
 	}
 
@@ -36,15 +40,18 @@ public class Flag : MonoBehaviour
 		{
 			playerFlag.SetActive(true);
 			enemyFlag.SetActive(false);
+            neutralFlag.SetActive(false);
 		}
 
 		if (flagState == Zone.STATE.AI)
 		{
 			playerFlag.SetActive(false);
 			enemyFlag.SetActive(true);
-		}
+            neutralFlag.SetActive(false);
 
-	}
+        }
+
+    }
 
     void FlagCapture()
     {
@@ -53,7 +60,7 @@ public class Flag : MonoBehaviour
 
         for (int i = 0; i < aiFlagCollider.Length; i++)
         {
-            if (aiFlagCollider[i].tag == "E_Villager")
+            if (aiFlagCollider[i].tag == "E_Aldeano")
             {
                 aiOnTheFlag = i;
             }
@@ -61,7 +68,7 @@ public class Flag : MonoBehaviour
         }
         for (int i = 0; i < playerFlagCollider.Length; i++)
         {
-            if (playerFlagCollider[i].tag ==  "P_Villager") //---------------------------------CAMBIAR / INCLUIR TAG VILLAGER ENEMIGO
+            if (playerFlagCollider[i].tag ==  "P_Aldeano") //---------------------------------CAMBIAR / INCLUIR TAG VILLAGER ENEMIGO
             {
                 playerOnTheFlag = i;
             }

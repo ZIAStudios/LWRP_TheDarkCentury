@@ -8,7 +8,6 @@ public class Selectable : MonoBehaviour
     Renderer r;
     [SerializeField] bool unselectedObject = false;
     GameObject visible;
-    public GameObject instAnim;
 
     private void Awake()
     {
@@ -32,7 +31,6 @@ public class Selectable : MonoBehaviour
         get
         {
             return _isSelected;
-            Instantiate(instAnim);
         }
         set
         {
