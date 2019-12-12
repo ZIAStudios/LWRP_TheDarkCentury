@@ -681,7 +681,7 @@ MonoBehaviour:
   distanceToCombat: 15
   distancePlus: 20
   enemyToChase: {fileID: 0}
-  proyectilePoolTag: Arrow
+  proyectilePoolTag: P_Arrow
   spawnProyectile: {fileID: 2233048801721651226}
   attackSpeed: 1
   proyectileHeight: 2

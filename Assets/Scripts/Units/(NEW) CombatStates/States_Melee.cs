@@ -173,11 +173,8 @@ public class States_Melee : MonoBehaviour
 			if (toMovePoint != null)
 			{
 				float distance = Vector3.SqrMagnitude(toMovePoint.position - transform.position);
-				print(distance);
 				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 0.6)
 				{
-					print("aqui esta");
-
 					state = State.combat;
 				}
 	
