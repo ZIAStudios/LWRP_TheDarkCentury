@@ -196,7 +196,15 @@ public class States_Melee : MonoBehaviour
         enemy.anim.SetBool("TakeDamage", true);
 		enemy.TakeDamage(unit.damage);
 
-
+		float hitSound = Random.Range(0, 4);
+		if (hitSound <= 2)
+		{
+			FindObjectOfType<AudioManager>().Play("combate");
+		}
+		else
+		{
+			FindObjectOfType<AudioManager>().Play("combate1");
+		}
 
 		bestTarget.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
 	

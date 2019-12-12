@@ -108,7 +108,19 @@ public class Unit_Base : MonoBehaviour
 			{
 				print("Hit Enemy");
 
-
+				float hitSound = Random.Range(0, 25);
+				if (hitSound <= 2)
+				{
+					FindObjectOfType<AudioManager>().Play("Yes");
+				}
+				if (hitSound > 2 && hitSound <= 4)
+				{
+					if (gameObject.tag != "P_Aldeano")
+					{
+						FindObjectOfType<AudioManager>().Play("MovSoldado");
+					}
+					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
+				}
 
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
@@ -129,6 +141,20 @@ public class Unit_Base : MonoBehaviour
 			else if (Physics.Raycast(ray, out hit, 200, movementMask))
 			{
 				print("Select and click");
+
+				float hitSound = Random.Range(0, 25);
+				if (hitSound <= 2)
+				{
+					FindObjectOfType<AudioManager>().Play("Yes");
+				}
+				if (hitSound > 2 && hitSound <= 4)
+				{
+					if (gameObject.tag != "P_Aldeano")
+					{
+						FindObjectOfType<AudioManager>().Play("MovSoldado");
+					}
+					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
+				}
 
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
@@ -254,6 +280,7 @@ public class Unit_Base : MonoBehaviour
 
         }
 
+		FindObjectOfType<AudioManager>().Play("Muerte");
 		
 
 
