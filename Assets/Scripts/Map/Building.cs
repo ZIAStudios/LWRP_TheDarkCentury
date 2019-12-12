@@ -9,10 +9,9 @@ public class Building : MonoBehaviour
 {
     UnitsManager objectPooler;      //referencia al pool y al manager de tropas
 	int layerToSetRally = 9;
-
 	[TagSelector]
     public string playerObjectPoolTag = "";   //tag tropa aliada que crear (EDITOR)
-    [TagSelector]
+	[TagSelector]
 	public string aiObjectPoolTag = "";          //tag tropa AI que crear (EDITOR)
     [Space]
     Transform spawnPoint = null;     //sitio donde hacer spawn (EDITOR)
@@ -57,15 +56,11 @@ public class Building : MonoBehaviour
     [SerializeField] uint startUnits = 0;
     [SerializeField] bool baseActive = false; //si activas las mejoras de los sub edificios o no
 
-	private void Awake()
-	{
-        objectPooler = UnitsManager.Instance;
-		//agent = GetComponent<NavMeshAgent>();
-	}
-
 	void Start()
     {
-        spawnArea = gameObject.transform.GetChild(1).gameObject.GetComponent<BoxCollider>();
+		objectPooler = UnitsManager.Instance;
+
+		spawnArea = gameObject.transform.GetChild(1).gameObject.GetComponent<BoxCollider>();
         spawnPoint = transform.GetChild(0).transform;
 
         basemaxTroops = maxTroops;
@@ -86,20 +81,20 @@ public class Building : MonoBehaviour
         if (spawnDirectly) //Spawn de unidades inicial, sin tener ue esperar X tiempo a cada reaparición de unidades
         {
             #region Spawn when game starts
-            GameObject PlayerObject = objectPooler.GetPooledObject(playerObjectPoolTag);
-            if (PlayerObject != null)
+            GameObject directSpawnObject = objectPooler.GetPooledObject(playerObjectPoolTag);
+            if (directSpawnObject != null)
             {
                 //listas a añadir el GameObject creado
-                playerList.Add(PlayerObject);
-                objectPooler.activePooledObjects.Add(PlayerObject);
+                playerList.Add(directSpawnObject);
+                objectPooler.activePooledObjects.Add(directSpawnObject);
                 //sitio en el que aparecer
-                PlayerObject.transform.position = spawnPoint.position;
-                PlayerObject.transform.rotation = spawnPoint.rotation;
+                directSpawnObject.transform.position = spawnPoint.position;
+                directSpawnObject.transform.rotation = spawnPoint.rotation;
 
                 //que se vea el objecto
-                PlayerObject.SetActive(true);
+                directSpawnObject.SetActive(true);
                 //Donde se mueve al aparecer
-                PlayerObject.GetComponent<Unit_Base>().MoveAt(GetRandomPosition());
+                directSpawnObject.GetComponent<Unit_Base>().MoveAt(GetRandomPosition());
                 
             }
             #endregion
@@ -118,14 +113,17 @@ public class Building : MonoBehaviour
             currentTime = cooldownToSpawn;
         }
 
-        //el timer se ejecuta si la bandera no está en modo neutral y si las lista de los objectos no ha llegado a su máximo
-        if (buildingState != Zone.STATE.Neutral)
-        {
-            if (playerList.Count < maxTroops)
-            {
-                currentTime -= Time.deltaTime;
-            }
-            if (enemyList.Count < enemyMaxTroops)
+		//el timer se ejecuta si la bandera no está en modo neutral y si las lista de los objectos no ha llegado a su máximo
+		if (buildingState == Zone.STATE.Player)
+		{
+			if (playerList.Count < maxTroops)
+			{
+				currentTime -= Time.deltaTime;
+			}
+		}
+		if (buildingState == Zone.STATE.AI)
+		{
+			if (enemyList.Count < enemyMaxTroops)
             {
                 currentTime -= Time.deltaTime;
             }
@@ -149,9 +147,10 @@ public class Building : MonoBehaviour
                 if (currentTime <= 0)
                 {
                     GameObject PlayerObject = objectPooler.GetPooledObject(playerObjectPoolTag);
-                    if (PlayerObject != null)
+					PlayerObject.GetComponent<Unit_Base>().buildingTag = gameObject.tag.ToString();
+
+					if (PlayerObject != null)
                     {
-                        PlayerObject.GetComponent<Unit_Base>().buildingTag = gameObject.tag.ToString();
                         //listas a añadir el GameObject creado
                         playerList.Add(PlayerObject);
                         objectPooler.activePooledObjects.Add(PlayerObject);

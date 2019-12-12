@@ -60,7 +60,7 @@ public class Flag : MonoBehaviour
 
         for (int i = 0; i < aiFlagCollider.Length; i++)
         {
-            if (aiFlagCollider[i].tag == "E_Villager")
+            if (aiFlagCollider[i].tag == "E_Aldeano")
             {
                 aiOnTheFlag = i;
             }
@@ -68,7 +68,7 @@ public class Flag : MonoBehaviour
         }
         for (int i = 0; i < playerFlagCollider.Length; i++)
         {
-            if (playerFlagCollider[i].tag ==  "P_Villager") //---------------------------------CAMBIAR / INCLUIR TAG VILLAGER ENEMIGO
+            if (playerFlagCollider[i].tag ==  "P_Aldeano") //---------------------------------CAMBIAR / INCLUIR TAG VILLAGER ENEMIGO
             {
                 playerOnTheFlag = i;
             }

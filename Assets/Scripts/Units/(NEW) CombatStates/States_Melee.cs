@@ -195,7 +195,9 @@ public class States_Melee : MonoBehaviour
 
         enemy.anim.SetBool("TakeDamage", true);
 		enemy.TakeDamage(unit.damage);
-	
+
+
+
 		bestTarget.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
 	
 	}

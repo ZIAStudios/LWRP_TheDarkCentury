@@ -43,7 +43,10 @@ public class Unit_Base : MonoBehaviour
     float time = 0.1f;
     float startTime = 0.1f;
 
-    private void Awake()
+	Vector3 lastPos;
+
+
+	private void Awake()
     {
 		anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();   
@@ -64,7 +67,6 @@ public class Unit_Base : MonoBehaviour
         objectPooler = UnitsManager.Instance;           //referencia al pool
 
         currentHealth = maxHealth;
-
     }
 
 
@@ -106,12 +108,12 @@ public class Unit_Base : MonoBehaviour
 			{
 				print("Hit Enemy");
 
+
+
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
 					if (hit.collider.gameObject.GetComponentInParent<Positions>().positionsInUse < 6)
-					{
-						
-
+					{			
 						//hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
 						
 						//gameObject.GetComponent<States_Melee>().bestTarget = hit.collider.transform.parent.gameObject;
@@ -128,14 +130,14 @@ public class Unit_Base : MonoBehaviour
 			{
 				print("Select and click");
 
-				if (gameObject.GetComponent<States_Melee>().state != States_Melee.State.normal)
-				{
-					gameObject.GetComponent<States_Melee>().ignoreStates = true;
-					gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
-				}
-
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
+					if (gameObject.GetComponent<States_Melee>().state != States_Melee.State.normal)
+					{
+						gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
+					}
+
 					if (gameObject.GetComponent<States_Melee>().bestTarget != null)
 					{
 						gameObject.GetComponent<States_Melee>().bestTarget = null;
@@ -252,7 +254,10 @@ public class Unit_Base : MonoBehaviour
 
         }
 
-        gameObject.SetActive(false);
+		
+
+
+		gameObject.SetActive(false);
         transform.position = new Vector3 (transform.position.x, -100, transform.position.z);
         //------------------------------------------------------------------> Implementar reseteo de stats al morir
 
@@ -267,5 +272,22 @@ public class Unit_Base : MonoBehaviour
 
         Start();
     }
+
+	void Animations()
+	{
+		Vector3 curPos = transform.position;
+		if (curPos == lastPos)
+		{
+			anim.SetBool("Move", false);
+		}
+		else
+		{
+			lastPos = curPos;
+			anim.SetBool("Move", true);
+			anim.SetBool("Attacking", false);
+
+		}
+
+	}
 
 }

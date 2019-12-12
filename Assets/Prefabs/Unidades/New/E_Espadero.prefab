@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 8939513379880674691}
   m_LocalRotation: {x: -0, y: -0.9993844, z: -0, w: 0.035083503}
   m_LocalPosition: {x: -3.63, y: 7.76, z: 13.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8939513380435191539}
   - {fileID: 8939513380703505506}
@@ -2735,7 +2735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unselectedObject: 0
-  instAnim: {fileID: 0}
 --- !u!136 &8939513380703505509
 CapsuleCollider:
   m_ObjectHideFlags: 0
