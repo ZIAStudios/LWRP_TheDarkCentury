@@ -118,8 +118,11 @@ public class States_Melee : MonoBehaviour
 
     public void SetEnemy(GameObject target)
     {
-            state = State.alert;
-            toMovePoint = target.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
+        toMovePoint = target.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
+		if (toMovePoint != null && state != State.combat)
+		{
+			state = State.alert;
+		}
 
     }
 
@@ -170,14 +173,18 @@ public class States_Melee : MonoBehaviour
 			if (toMovePoint != null)
 			{
 				float distance = Vector3.SqrMagnitude(toMovePoint.position - transform.position);
-				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius)
+				print(distance);
+				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 0.6)
 				{
+					print("aqui esta");
+
 					state = State.combat;
 				}
 	
-				if (state == State.combat)
+				//if (state == State.combat)
+				else
 				{
-					if (distance > 0.2f + gameObject.GetComponent<CapsuleCollider>().radius)
+					if (distance >gameObject.GetComponent<CapsuleCollider>().radius)
 					{
 						state = State.alert;
 					}
@@ -212,7 +219,7 @@ public class States_Melee : MonoBehaviour
 	void Animations()
 	{
 		Vector3 curPos = transform.position;
-		if (curPos == lastPos)
+		if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
 		{
 			anim.SetBool("Move", false);
 		}

@@ -93,6 +93,11 @@ public class Unit_Base : MonoBehaviour
 
 
         MoveToPoint();
+
+		if (gameObject.tag == "P_Aldeano" || gameObject.tag == "E_Aldeano")
+		{
+			Animations();
+		}
     }
 
 
@@ -140,7 +145,6 @@ public class Unit_Base : MonoBehaviour
 			}
 			else if (Physics.Raycast(ray, out hit, 200, movementMask))
 			{
-				print("Select and click");
 
 				float hitSound = Random.Range(0, 25);
 				if (hitSound <= 2)
@@ -183,7 +187,7 @@ public class Unit_Base : MonoBehaviour
 			}
 
 			//Movimiento que hace el villager específico
-			if (gameObject.tag == "P_Villager")
+			if (gameObject.tag == "P_Aldeano")
             {
                 if (Physics.Raycast(ray, out hit, 200, subBuilding))
                 {
@@ -202,16 +206,6 @@ public class Unit_Base : MonoBehaviour
                         //lista para ver que está llendo a la posición (la casa)
                     }
                 }
-
-				if (agent.hasPath)
-				{
-					anim.SetBool("Move", true);
-				}
-				else
-				{
-					anim.SetBool("Move", false);
-
-				}
 			}
         }
     }
@@ -303,7 +297,9 @@ public class Unit_Base : MonoBehaviour
 	void Animations()
 	{
 		Vector3 curPos = transform.position;
-		if (curPos == lastPos)
+		//if (curPos.x  >= lastPos.x - 0.0001 || curPos.x <= lastPos.x + 0.0001 || curPos.z >= lastPos.z - 0.0001 || curPos.z <= lastPos.z + 0.0001)
+		if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
+		//if (curPos == lastPos)
 		{
 			anim.SetBool("Move", false);
 		}
