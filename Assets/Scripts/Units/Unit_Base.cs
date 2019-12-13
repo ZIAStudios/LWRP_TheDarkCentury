@@ -139,16 +139,16 @@ public class Unit_Base : MonoBehaviour
 					{			
 						//hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
 						
-						MoveAt(hit.collider.gameObject.transform.position);
-						gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						//MoveAt(hit.collider.gameObject.transform.position);
+						//gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						//
+						//if (Vector3.SqrMagnitude(this.gameObject.transform.position - hit.collider.gameObject.transform.position) <= 1)
+						//{
+						//	gameObject.GetComponent<States_Melee>().ignoreStates = false;
+						//}
 
-						if (Vector3.SqrMagnitude(this.gameObject.transform.position - hit.collider.gameObject.transform.position) <= 1)
-						{
-							gameObject.GetComponent<States_Melee>().ignoreStates = false;
-						}
 
-
-						//gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
+						gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
 
 					}
 				}
@@ -227,13 +227,6 @@ public class Unit_Base : MonoBehaviour
 			}
 
         }
-		var distance = Vector3.SqrMagnitude(this.transform.position - agent.pathEndPosition &&);
-		if (distance <= 10f)
-		{
-			print("false");
-		}
-
-		print(distance);
 	}
     #endregion
 
@@ -285,16 +278,16 @@ public class Unit_Base : MonoBehaviour
             gameObject.GetComponent<Unit_Range>().state = Unit_Range.State.wait;
 
 
-        if (gameObject.tag == "Player_Unit")
+        if (gameObject.tag == "P_Caballero")
         {
             objectPooler.melee_Units.Remove(gameObject);
         }
-        if (gameObject.tag == "Player_Range")
+        if (gameObject.tag == "P_Arquero")
         {
             objectPooler.range_Units.Remove(gameObject);
 
         }
-        if (gameObject.tag == "Player_Spear")
+        if (gameObject.tag == "P_Lancero")
         {
             objectPooler.spear_Units.Remove(gameObject);
 

@@ -43,6 +43,9 @@ public class States_Melee : MonoBehaviour
 
 	void Update()
     {
+		var distance = Vector3.SqrMagnitude(this.transform.position - agent.pathEndPosition);
+
+
 		if (ignoreStates && !agent.hasPath)
 		{
 			ignoreStates = false;
@@ -53,10 +56,12 @@ public class States_Melee : MonoBehaviour
 			MoveTo(toMovePoint.position);
 			hardMoving = true;
 		}
-		else
+		if (hardMoving == true && distance <= 10f)
 		{
 			hardMoving = false;
 		}
+
+		print(distance);
 
 		Animations();
 
@@ -116,17 +121,26 @@ public class States_Melee : MonoBehaviour
 
     #region AlertState() - 
 
-    public void SetEnemy(GameObject target)
-    {
-        toMovePoint = target.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
-		if (toMovePoint != null && state != State.combat)
+    //public void SetEnemy(GameObject target)
+    //{
+    //    toMovePoint = target.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
+	//	if (toMovePoint != null && state != State.combat)
+	//	{
+	//		state = State.alert;
+	//	}
+	//
+    //}
+	public void SetEnemy(GameObject target)
+	{
+		if (state != State.combat)
 		{
 			state = State.alert;
+			toMovePoint = target.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
+
 		}
+	}
 
-    }
-
-    void AlertState()
+	void AlertState()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
         int lowestValue = 20;                   //Valor que nunca se puede superar (el maximo valos es el máximo de tropas atacando)
@@ -147,7 +161,7 @@ public class States_Melee : MonoBehaviour
 
         if (colliders.Length != (uint)0)
         {
-			if (state != State.combat)
+			//if (state != State.combat)
             SetEnemy(bestTarget);
         }
         else
@@ -173,7 +187,7 @@ public class States_Melee : MonoBehaviour
 			if (toMovePoint != null)
 			{
 				float distance = Vector3.SqrMagnitude(toMovePoint.position - transform.position);
-				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 0.6)
+				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 1)
 				{
 					state = State.combat;
 				}
