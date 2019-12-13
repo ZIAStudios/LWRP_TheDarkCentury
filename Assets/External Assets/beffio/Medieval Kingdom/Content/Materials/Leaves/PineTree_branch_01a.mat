@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PineTree_branch_01a
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _SPECULAR_SETUP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -188,7 +188,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _Smoothness_Shift: 2
     - _SpecularHighlights: 1
@@ -204,12 +204,12 @@ Material:
     - _Wind_power: 0.7
     - _Wind_power_multiply: 0.1064
     - _Wind_speed: 2
-    - _WorkflowMode: 1
+    - _WorkflowMode: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
     - _2nd_color: {r: 0.7794118, g: 0.47902992, b: 0.34385815, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.7924528, g: 0.3360494, b: 0, a: 1}
     - _Base_Color: {r: 1, g: 0.8482759, b: 0, a: 0}
     - _Base_Leaf_color: {r: 0.5930606, g: 0.697, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
