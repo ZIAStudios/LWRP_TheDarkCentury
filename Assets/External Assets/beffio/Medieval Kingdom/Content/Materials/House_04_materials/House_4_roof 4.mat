@@ -4,10 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: House_4_roof 4
-  m_Shader: {fileID: 4800000, guid: ca8c7b0a6e455b34a956d170adcc5914, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6c212dbbe87ef43b18939646a5257f8f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -203,6 +204,7 @@ Material:
     - _Ambient_occlusion_shift: 1
     - _BumpScale: 1
     - _Cutoff: 0
+    - _Delta: 0.001
     - _DetailNormal_map_inputMapScale: 1
     - _Detail_2_level: 0.216
     - _Detail_Smoothness_shift: 0.675
@@ -231,6 +233,9 @@ Material:
     - _OcclusionStrength: 1
     - _Paint_level: 0
     - _Parallax: 0.02
+    - _Poseterize: 0
+    - _PosterizationCount: 8
+    - _Raw: 0
     - _Roof_color_difference: 5
     - _SmoothnessTextureChannel: 0
     - _Smoothness_shift: 0.462

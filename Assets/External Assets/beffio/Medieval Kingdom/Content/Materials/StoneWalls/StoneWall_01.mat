@@ -4,22 +4,32 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: StoneWall_01
-  m_Shader: {fileID: 4800000, guid: b1a8003b3a91375448f9f79b0f6e32f6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo_smoothness_map_input:
+        m_Texture: {fileID: 2800000, guid: eb85a9f6ec8895a488b0a9fae9639feb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Ambient_Occlusion_map_input:
         m_Texture: {fileID: 2800000, guid: 926ef6e2b602d1f428080684e5fc9b8e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -64,10 +74,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Albedo_smoothness_map_input:
-        m_Texture: {fileID: 2800000, guid: eb85a9f6ec8895a488b0a9fae9639feb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -138,6 +144,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 08f624ad66dcd8c4db618937afbd81b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 2800000, guid: 08f624ad66dcd8c4db618937afbd81b1, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -188,9 +198,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AO_shift: 0.534
+    - _AlphaClip: 0
+    - _Base_Normal_Intensity: 1
+    - _Blend: 0
     - _Bricks_color_differrence: 0
     - _Bricks_color_shift: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormal_map_inputMapScale: 1
     - _Detail_1_level: 0
@@ -198,6 +212,7 @@ Material:
     - _DstBlend: 0
     - _Edge_wear: 1
     - _Edges_intensity: 0.5
+    - _EnvironmentReflections: 1
     - _Float0: 2
     - _Float1: -0.8070552
     - _Float2: -2
@@ -212,20 +227,26 @@ Material:
     - _Normal_map_input_Detail_level: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _Ruins_moss_intensity: 1
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _Smoothness_shift: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _Top_mask_level: 0.4
     - _Top_mask_normal_intensity: 2
     - _Top_mask_smoothness_shift: 1
     - _Top_mask_tiling: 4
     - _UVSec: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     - __dirty: 0
     - _moss_intensity: 2
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Base_color: {r: 0.22491348, g: 0.2352941, b: 0.23269896, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0.3235292, g: 0.3235292, b: 0.3235292, a: 0}
@@ -243,7 +264,21 @@ Material:
     - _Ruins_between_bricks_color: {r: 0.14509687, g: 0.1411753, b: 0.13333216, a: 0}
     - _Ruins_between_color: {r: 0.14509764, g: 0.14117607, b: 0.13333294, a: 0}
     - _Ruins_moss_color: {r: 0.654902, g: 0.7058823, b: 0.14901832, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Top_Color: {r: 0.19684257, g: 0.27205884, b: 0.17803851, a: 0}
     - _Top_mask_tiling: {r: 1, g: 1, b: 0, a: 0}
     - _base_color: {r: 0.44705886, g: 0.41176337, b: 0.3843124, a: 0}
     - _between_bricks_color: {r: 0.14509675, g: 0.14117518, b: 0.13333204, a: 0}
+--- !u!114 &3627272549142902727
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1

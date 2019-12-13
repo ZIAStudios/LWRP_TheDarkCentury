@@ -4,16 +4,18 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Fire
-  m_Shader: {fileID: 4800000, guid: 4419966325d11e341b83aca1e12c8ea3, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -24,6 +26,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Ambien_Occllusion:
         m_Texture: {fileID: 2800000, guid: 894f0ca1a1a69b04997cc519b84e323a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Texture:
@@ -106,6 +112,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: ef11cdaa9fb31f2489c4359977149e7b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 2800000, guid: c9975cd677f4eb0458b87fe80af7373e, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -136,10 +146,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AO_shift: 0.99
+    - _AlphaClip: 0
+    - _Blend: 0
     - _BumpScale: 1
     - _Color_intensity: 10
     - _Cracks_map_intensity: 40
     - _Cracksmapintensity: 15
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _Distortion: 0.2
@@ -150,6 +163,7 @@ Material:
     - _Emmisive_intensity: 0
     - _Emmisive_multiply: 21.9
     - _Emmisivemultiply: 40
+    - _EnvironmentReflections: 1
     - _Fire_Glow_intensity: 25
     - _Fire_intensity: 25
     - _Fire_map_1_shift: 2
@@ -175,13 +189,17 @@ Material:
     - _Paralaax_shift: 8.32
     - _Paralax_shift: 0.05
     - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _Small_noise_shift: 15
     - _Smallnoiseshift: 3.07
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _Smoothness_Shift: 0.5
     - _SpecularHighlights: 1
     - _Speed: 0.01
     - _SrcBlend: 1
+    - _Surface: 0
     - _TessPhongStrength: 0.5
     - _TransAmbient: 0.2
     - _TransDirect: 1
@@ -194,11 +212,12 @@ Material:
     - _Vertex_offset_speed: 0.55
     - _Wind_power_multiply: 0.0351
     - _Wind_speed: 0.064
+    - _WorkflowMode: 1
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
     - _2nd_color: {r: 0.9632353, g: 0.3786511, b: 0, a: 0}
-    - _BaseColor: {r: 0.31617647, g: 0.15654904, b: 0.011624128, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Base_Color: {r: 0.6691177, g: 0.3622391, b: 0.08363971, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0.35294116, b: 0, a: 0}
@@ -214,3 +233,17 @@ Material:
     - _Fire_move_color: {r: 1, g: 0.35172406, b: 0, a: 0}
     - _Small_noise_color: {r: 1, g: 0, b: 0, a: 0}
     - _Smallnoisecolor: {r: 0.97794116, g: 0.4465203, b: 0.15819634, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+--- !u!114 &492173352649285344
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
