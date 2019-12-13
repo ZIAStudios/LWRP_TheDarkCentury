@@ -24,48 +24,48 @@ Material:
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _DiffuseBlackChannel:
-        m_Texture: {fileID: 2800000, guid: a057df87aeb2adb47b42dbcb1de8a642, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Texture: {fileID: 2800000, guid: 45e8d7f2332dba745a20c1fc3287c459, type: 3}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _DiffuseGreenChannel:
         m_Texture: {fileID: 2800000, guid: 041120323c1277c4ea4abcc5047c0678, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _DiffuseRedChannel:
-        m_Texture: {fileID: 2800000, guid: 6fac7fd8645382e418ff00b17b47a763, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 45e8d7f2332dba745a20c1fc3287c459, type: 3}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _HeightAlphachannel:
         m_Texture: {fileID: 2800000, guid: e82896696bf2f984c8d3126227ecf21a, type: 3}
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _HeightBlackChannel:
-        m_Texture: {fileID: 2800000, guid: bfc910bb276154d4babeed64e5e8748e, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 27298904c94e36f46b83ab6b5827a5b3, type: 3}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _HeightGreenchannel:
         m_Texture: {fileID: 2800000, guid: 6e4ec6f0581c84144a71bb2c6a6b4113, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _HeightRedChannel:
-        m_Texture: {fileID: 2800000, guid: a32a858a403b44847864758ec5578e2b, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 27298904c94e36f46b83ab6b5827a5b3, type: 3}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _NormalAlphaChannel:
         m_Texture: {fileID: 2800000, guid: 5a67e4d4b8a8a2947b87168d56b0ef3c, type: 3}
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _NormalBlackChannel:
-        m_Texture: {fileID: 2800000, guid: b380a8c09ba9b7b449870fb33982a1a8, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _NormalGreenChannel:
         m_Texture: {fileID: 2800000, guid: 91a65e9ab320d6f4eb870f27598c7bb6, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     - _NormalRedChannel:
-        m_Texture: {fileID: 2800000, guid: 158cb12c39f8d93469bc5ef379fec320, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: ccc7af6186fd0f34ab363ebdeb335b6a, type: 3}
+        m_Scale: {x: 20, y: 20}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlendingStrengthAlpha: 1.23
