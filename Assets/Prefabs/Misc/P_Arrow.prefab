@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 3598347628979496125}
   - component: {fileID: 3598347628979496126}
   m_Layer: 0
-  m_Name: "P\xB7Arrow"
-  m_TagString: Untagged
+  m_Name: P_Arrow
+  m_TagString: P_Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

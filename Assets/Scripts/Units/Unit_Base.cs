@@ -113,6 +113,9 @@ public class Unit_Base : MonoBehaviour
 			{
 				print("Hit Enemy");
 
+				#region Sound - When click on a enemy with selected troops
+
+				//Sonido al ir a por el enemigo
 				float hitSound = Random.Range(0, 25);
 				if (hitSound <= 2)
 				{
@@ -126,26 +129,36 @@ public class Unit_Base : MonoBehaviour
 					}
 					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
 				}
+				#endregion
 
+				#region If this.gameobject have STATE_MELEE and hit enemy
+				//Si el enemigo tiene States_Melee
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
 					if (hit.collider.gameObject.GetComponentInParent<Positions>().positionsInUse < 6)
 					{			
 						//hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
 						
-						//gameObject.GetComponent<States_Melee>().bestTarget = hit.collider.transform.parent.gameObject;
 						//MoveAt(hit.collider.gameObject.transform.position);
+						//gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						//
+						//if (Vector3.SqrMagnitude(this.gameObject.transform.position - hit.collider.gameObject.transform.position) <= 1)
+						//{
+						//	gameObject.GetComponent<States_Melee>().ignoreStates = false;
+						//}
+
+
 						gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
-						print(hit.collider.transform.parent.gameObject.name);
+
 					}
 				}
 				//else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
 				//gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
-
+				#endregion
 			}
 			else if (Physics.Raycast(ray, out hit, 200, movementMask))
 			{
-
+				#region Sound - When click on ground with selected troops
 				float hitSound = Random.Range(0, 25);
 				if (hitSound <= 2)
 				{
@@ -159,6 +172,9 @@ public class Unit_Base : MonoBehaviour
 					}
 					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
 				}
+				#endregion
+
+				#region If this.gameobject have STATE_MELEE and hit ground
 
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
@@ -182,7 +198,8 @@ public class Unit_Base : MonoBehaviour
 						gameObject.GetComponent<Unit_Melee>().enemyToChase = null;
 					}
 				}
-				
+				#endregion
+
 				agent.SetDestination(hit.point);
 			}
 
@@ -199,7 +216,8 @@ public class Unit_Base : MonoBehaviour
                         {
                             MoveAt(hit.collider.GetComponent<Building_boost>().spawnPoint);
 
-                        }else
+                        }
+						else
                         {
                             MoveAt(transform.position);
                         }
@@ -207,8 +225,9 @@ public class Unit_Base : MonoBehaviour
                     }
                 }
 			}
+
         }
-    }
+	}
     #endregion
 
     #region MoveAt() - moves to the spot set
@@ -259,16 +278,16 @@ public class Unit_Base : MonoBehaviour
             gameObject.GetComponent<Unit_Range>().state = Unit_Range.State.wait;
 
 
-        if (gameObject.tag == "Player_Unit")
+        if (gameObject.tag == "P_Caballero")
         {
             objectPooler.melee_Units.Remove(gameObject);
         }
-        if (gameObject.tag == "Player_Range")
+        if (gameObject.tag == "P_Arquero")
         {
             objectPooler.range_Units.Remove(gameObject);
 
         }
-        if (gameObject.tag == "Player_Spear")
+        if (gameObject.tag == "P_Lancero")
         {
             objectPooler.spear_Units.Remove(gameObject);
 
