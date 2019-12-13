@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06333b08303a3e4b893d893bc1ed165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 4
+  distance: 5
   positionsToAttack:
   - {fileID: 0}
   - {fileID: 0}
@@ -724,7 +724,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
-    - target: {fileID: 13710158, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
+    - target: {fileID: 13721088, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
@@ -732,7 +732,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
-    - target: {fileID: 13721088, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
+    - target: {fileID: 13710158, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}

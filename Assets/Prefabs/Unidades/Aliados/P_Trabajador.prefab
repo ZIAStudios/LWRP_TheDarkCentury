@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInPoint: []
-  radius: 0.2
+  radius: 0.5
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06333b08303a3e4b893d893bc1ed165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 4
+  distance: 5
   positionsToAttack:
   - {fileID: 0}
   - {fileID: 0}
