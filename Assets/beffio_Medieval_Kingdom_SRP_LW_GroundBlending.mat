@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: beffio_Medieval_Kingdom_SRP_LW_GroundBlending
+  m_Shader: {fileID: 4800000, guid: 6715eea98f890f54b9b65125eaf2d342, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DiffuseAlphaChannel:
+        m_Texture: {fileID: 2800000, guid: bf778cd4515a0c643af5e0c1034f7be6, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseBlackChannel:
+        m_Texture: {fileID: 2800000, guid: a057df87aeb2adb47b42dbcb1de8a642, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseGreenChannel:
+        m_Texture: {fileID: 2800000, guid: 041120323c1277c4ea4abcc5047c0678, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseRedChannel:
+        m_Texture: {fileID: 2800000, guid: 6fac7fd8645382e418ff00b17b47a763, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightAlphachannel:
+        m_Texture: {fileID: 2800000, guid: e82896696bf2f984c8d3126227ecf21a, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _HeightBlackChannel:
+        m_Texture: {fileID: 2800000, guid: bfc910bb276154d4babeed64e5e8748e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightGreenchannel:
+        m_Texture: {fileID: 2800000, guid: 6e4ec6f0581c84144a71bb2c6a6b4113, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _HeightRedChannel:
+        m_Texture: {fileID: 2800000, guid: a32a858a403b44847864758ec5578e2b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalAlphaChannel:
+        m_Texture: {fileID: 2800000, guid: 5a67e4d4b8a8a2947b87168d56b0ef3c, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _NormalBlackChannel:
+        m_Texture: {fileID: 2800000, guid: b380a8c09ba9b7b449870fb33982a1a8, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _NormalGreenChannel:
+        m_Texture: {fileID: 2800000, guid: 91a65e9ab320d6f4eb870f27598c7bb6, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _NormalRedChannel:
+        m_Texture: {fileID: 2800000, guid: 158cb12c39f8d93469bc5ef379fec320, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BlendingStrengthAlpha: 1.23
+    - _BlendingStrengthGreen: 2.85
+    - _BlendingstrengthRed: 0.7
+    - _NormalmapstrengthAlpha: 2.32
+    - _NormalmapstrengthBlack: 4.42
+    - _NormalmapstrengthGreen: 1.5
+    - _NormalmapstrengthRed: 2.41
+    - _ParallaxStrength: 0
+    - _SmoothnessshiftAlphaChannel: 0
+    - _SmoothnessshiftBlackchannel: 0
+    - _SmoothnessshiftGreenChannel: 0
+    - _SmoothnessshiftRedChannel: 0
+    - _TilingAlpha: 56.3
+    - _TilingBlack: 31.7
+    - _TilingGreen: 10
+    - _TilingRed: 10
+    m_Colors:
+    - _ColorshiftAlphaChannel: {r: 0.6627451, g: 0.6627451, b: 0.6627451, a: 0}
+    - _ColorshiftBlackChannel: {r: 0.54509807, g: 0.54509807, b: 0.54509807, a: 0}
+    - _ColorshiftGreenChannel0: {r: 0.8392157, g: 0.81960785, b: 0.8117647, a: 0}
+    - _ColorshiftRedChannel: {r: 1, g: 0.89411765, b: 0.45490196, a: 0}
+    - _Wetness_color: {r: 1, g: 1, b: 1, a: 0}
