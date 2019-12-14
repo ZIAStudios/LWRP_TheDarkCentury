@@ -419,7 +419,7 @@ MonoBehaviour:
   acceleration: 12
   maxHealth: 110
   armor: 10
-  damage: 100
+  damage: 15
   currentHealth: 0
   startSpeed: 0
   startRotationSpeed: 0

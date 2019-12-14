@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Wizard_House_ roof
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: 
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -198,7 +198,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.42745098, b: 0.42745098, a: 1}
+    - _BaseColor: {r: 0.21782663, g: 0.44190794, b: 0.8396226, a: 1}
     - _Base_color: {r: 0.233564, g: 0.28872448, b: 0.35294116, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Detail_2_color: {r: 0, g: 0.9779412, b: 0.7756083, a: 0}

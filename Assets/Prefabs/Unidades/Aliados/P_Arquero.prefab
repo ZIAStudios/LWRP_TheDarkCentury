@@ -641,12 +641,12 @@ MonoBehaviour:
   subBuilding:
     serializedVersion: 2
     m_Bits: 8192
-  speed: 11
+  speed: 8
   rotationSpeed: 500
   acceleration: 12
   maxHealth: 100
   armor: 6
-  damage: 150
+  damage: 20
   currentHealth: 0
   startSpeed: 0
   startRotationSpeed: 0

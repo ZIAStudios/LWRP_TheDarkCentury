@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject menuPausa;
     public bool pausado;
-
+    
    
 
     public GameObject texto1;
@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour
         /*pausado = true;
         Time.timeScale = 0f;
 
+       menuPausa.SetActive(true);
         texto2.SetActive(false);
         texto1.SetActive(true);*/
     }
@@ -69,6 +70,7 @@ public class PauseMenu : MonoBehaviour
     public void Siguiente_2()
     {
         menuPausa.SetActive(false);
+       
     }
     public void PasaEscena()
     {
