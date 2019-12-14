@@ -309,9 +309,9 @@ MonoBehaviour:
   speed: 10
   rotationSpeed: 500
   acceleration: 12
-  maxHealth: 500
-  armor: 1
-  damage: 10
+  maxHealth: 110
+  armor: 10
+  damage: 100
   currentHealth: 0
   startSpeed: 0
   startRotationSpeed: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   startDamage: 0
   buildingTag: 
   knockbackPoint: {x: 0, y: 0, z: 0}
-  alreadySpawns: 0
+  alreadySpawns: 1
 --- !u!114 &1404874515238576966
 MonoBehaviour:
   m_ObjectHideFlags: 0

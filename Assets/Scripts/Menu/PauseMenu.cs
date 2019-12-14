@@ -70,5 +70,9 @@ public class PauseMenu : MonoBehaviour
     {
         menuPausa.SetActive(false);
     }
+    public void PasaEscena()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
 }
