@@ -18,10 +18,10 @@ public class Selectable : MonoBehaviour
 
     private void Start()
     {
-        if (!unselectedObject)
+        //if (!unselectedObject)
             visible = gameObject.transform.GetChild(0).gameObject;
         //r.material.color = norColor;
-        if (!unselectedObject)
+        //if (!unselectedObject)
             visible.SetActive(false);
     }
 
