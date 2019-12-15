@@ -209,7 +209,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _2nd_color: {r: 0.7794118, g: 0.47902992, b: 0.34385815, a: 0}
-    - _BaseColor: {r: 0.7924528, g: 0.3360494, b: 0, a: 1}
+    - _BaseColor: {r: 0.49056602, g: 0.31887695, b: 0, a: 1}
     - _Base_Color: {r: 1, g: 0.8482759, b: 0, a: 0}
     - _Base_Leaf_color: {r: 0.5930606, g: 0.697, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

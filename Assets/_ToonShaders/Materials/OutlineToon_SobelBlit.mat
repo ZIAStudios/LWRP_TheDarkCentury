@@ -90,7 +90,7 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Delta: 0.0005
+    - _Delta: 0.00137
     - _DeltaX: 0.002
     - _DeltaY: 0.002
     - _DstBlend: 0
@@ -101,7 +101,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Poseterize: 1
-    - _PosterizationCount: 9.72
+    - _PosterizationCount: 14.4
     - _QueueOffset: 0
     - _Raw: 0
     - _ReceiveShadows: 1

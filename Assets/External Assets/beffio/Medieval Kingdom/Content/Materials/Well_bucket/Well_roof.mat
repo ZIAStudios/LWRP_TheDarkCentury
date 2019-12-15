@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Well_roof
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: 
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -261,7 +261,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 0.754717, g: 0.38451856, b: 0, a: 1}
+    - _BaseColor: {r: 0.21960784, g: 0.44313726, b: 0.8392157, a: 1}
     - _Base_Color: {r: 0.60294116, g: 0.012755641, b: 0, a: 0}
     - _Base_color: {r: 0.29411763, g: 0.041089967, b: 0.041089967, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
