@@ -655,6 +655,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
+  - {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1070,6 +1071,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
+  - {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1138,6 +1140,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
+  - {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1554,6 +1557,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
+  - {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1763,6 +1767,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
+  - {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2143,7 +2148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3210499312265842276
 Transform:
   m_ObjectHideFlags: 0
@@ -2440,9 +2445,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3210499312937575950}
-  m_LocalRotation: {x: -0, y: -0.9993844, z: -0, w: 0.035083503}
+  m_LocalRotation: {x: 0, y: -0.99938446, z: 0, w: 0.035082705}
   m_LocalPosition: {x: -10.35, y: 7.76, z: 13}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 3210499311013309191}
   - {fileID: 3210499312361940991}
