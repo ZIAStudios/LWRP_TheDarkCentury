@@ -44,7 +44,32 @@ public class Unit_Base : MonoBehaviour
     float startTime = 0.1f;
 
 	Vector3 lastPos;
+    [SerializeField]
+    LayerMask floacklayer ;
+    [SerializeField]
+    float flockradius = 1;
+    [SerializeField]
+    float flockStrength = 1;
 
+    void Flock()
+    {
+        Collider[] colls = Physics.OverlapSphere( transform.position, flockradius, floacklayer);
+        Vector3 flockVector = Vector3.zero;
+        int totalcolls = 0;
+        for(int i = 0; i < colls.Length; i++)
+        {
+            if (colls[i].GetComponent<Unit_Base>() != null) {
+                totalcolls++;
+                flockVector += (transform.position - colls[i].transform.position).normalized * Mathf.Lerp(1,0, Vector3.Distance(transform.position,colls[i].transform.position) / flockradius);
+            }
+        }
+        if(totalcolls > 0)
+        {
+            flockVector /= totalcolls;
+            Debug.Log(flockVector);
+        }
+        agent.Move (flockVector * flockStrength);
+    }
 
 	private void Awake()
     {
@@ -98,6 +123,7 @@ public class Unit_Base : MonoBehaviour
 		{
 			Animations();
 		}
+        Flock();
     }
 
 
@@ -133,24 +159,10 @@ public class Unit_Base : MonoBehaviour
 
 				#region If this.gameobject have STATE_MELEE and hit enemy
 				//Si el enemigo tiene States_Melee
-				if (gameObject.GetComponent<States_Melee>() != null)
+				if (gameObject.GetComponent<States_Melee>() != null )
 				{
-					if (hit.collider.gameObject.GetComponentInParent<Positions>().positionsInUse < 6)
-					{			
-						//hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
-						
-						//MoveAt(hit.collider.gameObject.transform.position);
-						//gameObject.GetComponent<States_Melee>().ignoreStates = true;
-						//
-						//if (Vector3.SqrMagnitude(this.gameObject.transform.position - hit.collider.gameObject.transform.position) <= 1)
-						//{
-						//	gameObject.GetComponent<States_Melee>().ignoreStates = false;
-						//}
-
-
-						gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
-
-					}
+                    States_Melee myMelee = GetComponent<States_Melee>();
+                    myMelee.AttackEnemy(hit.collider.transform.parent.gameObject);
 				}
 				//else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
 				//gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
@@ -184,9 +196,9 @@ public class Unit_Base : MonoBehaviour
 						gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
 					}
 
-					if (gameObject.GetComponent<States_Melee>().bestTarget != null)
+					if (gameObject.GetComponent<States_Melee>().currentTarget != null)
 					{
-						gameObject.GetComponent<States_Melee>().bestTarget = null;
+						gameObject.GetComponent<States_Melee>().currentTarget = null;
 					}
 				}
 

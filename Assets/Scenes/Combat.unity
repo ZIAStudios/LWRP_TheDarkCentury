@@ -187,10 +187,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: flockradius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: flockStrength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: floacklayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576966, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: distance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576962, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576961, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1404874514787012545, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
@@ -563,6 +588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: E_Espadero (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674691, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8939513379880674699, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -621,6 +651,16 @@ PrefabInstance:
     - target: {fileID: 8939513379880674692, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
       propertyPath: alreadySpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674697, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674694, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939513379880674693, guid: ec56352be2593674798a6da72b5be637,
@@ -732,6 +772,16 @@ PrefabInstance:
       propertyPath: alreadySpawns
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674697, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674694, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8939513379880674693, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
       propertyPath: distance
@@ -836,10 +886,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: alreadySpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: floacklayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: flockradius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: flockStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576966, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: distance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576962, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576961, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1404874514787012545, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
@@ -884,6 +964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: E_Espadero
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674691, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939513379880674699, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
@@ -943,6 +1028,16 @@ PrefabInstance:
     - target: {fileID: 8939513379880674692, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
       propertyPath: alreadySpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674697, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939513379880674694, guid: ec56352be2593674798a6da72b5be637,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939513379880674693, guid: ec56352be2593674798a6da72b5be637,
@@ -1115,10 +1210,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: flockradius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: flockStrength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: floacklayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576966, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: distance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576962, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576961, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1404874514787012545, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
