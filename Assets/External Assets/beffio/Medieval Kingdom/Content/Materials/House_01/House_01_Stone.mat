@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: House_01_Stone
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -129,7 +129,7 @@ Material:
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0
+    - _Cutoff: 0.5
     - _DetailNormal_map_inputMapScale: 1
     - _Detail_2_level: 0
     - _Detail_Smoothness_shift: 0
@@ -137,10 +137,10 @@ Material:
     - _DstBlend: 0
     - _Edge_wear: 1
     - _Emmisive_intensity: 0
-    - _EnvironmentReflections: 1
-    - _GlossMapScale: 1
+    - _EnvironmentReflections: 0
+    - _GlossMapScale: 0
     - _Glossiness: 0.5
-    - _GlossyReflections: 1
+    - _GlossyReflections: 0
     - _Material_Smoothness_shift: 0.9
     - _Metallic: 0
     - _Metalobjectusesmettalicsmoothnesmap: 0
@@ -161,9 +161,9 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     - _Base_color: {r: 0.25735295, g: 0.25362054, b: 0.23275304, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.6691177, g: 0.6430707, b: 0.580558, a: 1}
     - _Detail_2_color: {r: 0, g: 0.9779412, b: 0.7756083, a: 0}
     - _Detail_color: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

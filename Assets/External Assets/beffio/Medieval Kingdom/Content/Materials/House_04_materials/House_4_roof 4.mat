@@ -8,13 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: House_4_roof 4
-  m_Shader: {fileID: 4800000, guid: 6c212dbbe87ef43b18939646a5257f8f, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -31,8 +32,12 @@ Material:
         m_Texture: {fileID: 2800000, guid: b838fa83c90eed34f9c29a27bdf9c290, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _BumpMap:
+    - _BaseMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 507b07135d3b6344598cac80504f095e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Copper_grayscale2:
@@ -127,6 +132,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 5c32a5f0ffbb06a458b3e15be74284f7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 2800000, guid: 14efe66af3f6b0f4cbdb86a03a1f5ef1, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -198,11 +207,14 @@ Material:
     m_Floats:
     - _AO_level: 0.718
     - _AO_shift: 0.87
+    - _AlphaClip: 0
     - _Alpha_cutout_level: 1
     - _Alpha_cutout_mask_map_input: 1
     - _Alpha_cutout_mask_map_input_level: 1
     - _Ambient_occlusion_shift: 1
+    - _Blend: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0
     - _Delta: 0.001
     - _DetailNormal_map_inputMapScale: 1
@@ -213,6 +225,7 @@ Material:
     - _DstBlend: 0
     - _Edge_wear: 0.063
     - _Emmisive_intensity: 0
+    - _EnvironmentReflections: 1
     - _Float0: 1
     - _Float2: 1
     - _GlossMapScale: 1
@@ -235,18 +248,24 @@ Material:
     - _Parallax: 0.02
     - _Poseterize: 0
     - _PosterizationCount: 8
+    - _QueueOffset: 0
     - _Raw: 0
+    - _ReceiveShadows: 1
     - _Roof_color_difference: 5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _Smoothness_shift: 0.462
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _Tiling: 1
     - _Tree_edges_light: 0.507144
     - _UVSec: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
+    - _BaseColor: {r: 0.21960784, g: 0.44313726, b: 0.8392157, a: 1}
     - _Base_Color: {r: 0.60294116, g: 0.012755641, b: 0, a: 0}
     - _Base_color: {r: 0.22407098, g: 0.14923526, b: 0.3161764, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -260,6 +279,20 @@ Material:
     - _Moss_Color: {r: 0.6553948, g: 0.7058823, b: 0.15051866, a: 0}
     - _Moss_color: {r: 0, g: 0.5588235, b: 0.0038539239, a: 0}
     - _Roof_color: {r: 0.42647037, g: 0.16003442, b: 0.08153098, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tree_01_color: {r: 1, g: 1, b: 1, a: 0}
     - _Tree_edges_light_color: {r: 1, g: 1, b: 1, a: 0}
     - _Wood_tiling: {r: 1, g: 1, b: 0, a: 0}
+--- !u!114 &8007401302778649449
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
