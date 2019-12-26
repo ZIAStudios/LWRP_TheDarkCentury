@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397849202}
   m_Layer: 0
-  m_Name: Zona 1
+  m_Name: '-------------------------   Zona 1    ------------------------------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1580,6 +1580,10 @@ MonoBehaviour:
   pools:
   - name: P_Trabajador
     objectToPool: {fileID: 548762566281212811, guid: f059f66e0e33e2947b3889d5e377ba5c,
+      type: 3}
+    amountToPool: 5
+  - name: P_Lancero
+    objectToPool: {fileID: 4607330493958921951, guid: 90eecb97d3ffe4340abf7407544c5da1,
       type: 3}
     amountToPool: 5
   pooledObjects: []

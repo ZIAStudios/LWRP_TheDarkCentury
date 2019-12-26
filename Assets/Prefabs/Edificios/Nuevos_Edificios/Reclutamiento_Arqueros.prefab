@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 2098255121580892112}
   - component: {fileID: 5730581922128706718}
   - component: {fileID: 2733763485878450030}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: P_Arquero
   m_TagString: P_Arquero
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3955658381820508372}
   - component: {fileID: 632252016545215181}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Spawn area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,7 +788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2814181850233836026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.94, y: 2, z: -15.07}
+  m_LocalPosition: {x: -61.82, y: 2, z: -15.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3419540352629390244}
@@ -4224,8 +4224,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 26, y: 14.7, z: 20.6}
-  m_Center: {x: -41.89, y: 7.8, z: -15.2}
+  m_Size: {x: 12.719719, y: 14.699999, z: 20.6}
+  m_Center: {x: -35.249874, y: 7.8, z: -15.2}
 --- !u!1 &3442943732905245834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,7 +4729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4335539623632308203}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: "Maniqu\xED"
   m_TagString: E_Caballero
   m_Icon: {fileID: 0}
@@ -7155,7 +7155,7 @@ GameObject:
   - component: {fileID: 8679554259123322602}
   - component: {fileID: 4510640976734406856}
   - component: {fileID: 19135618890380338}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: P_Arquero (1)
   m_TagString: P_Arquero
   m_Icon: {fileID: 0}
@@ -7381,7 +7381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2377794080170080009}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7695,7 +7695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7329018393395536023}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: "Maniqu\xED"
   m_TagString: E_Caballero
   m_Icon: {fileID: 0}
@@ -8157,19 +8157,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
@@ -8197,21 +8197,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
-        type: 3}
+    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
-        type: 3}
+    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
+        type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
@@ -8290,19 +8290,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
@@ -8330,21 +8330,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
-        type: 3}
+    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
-        type: 3}
+    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
+        type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
@@ -8363,6 +8363,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.737
@@ -8407,10 +8411,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (24)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8427,6 +8427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.887
@@ -8471,10 +8475,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (20)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8491,6 +8491,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.16
@@ -8535,10 +8539,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (30)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8555,6 +8555,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.65
@@ -8599,10 +8603,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (34)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8619,6 +8619,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.977
@@ -8663,10 +8667,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (26)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8683,6 +8683,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.14
@@ -8727,10 +8731,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (28)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8747,6 +8747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.65
@@ -8791,10 +8795,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8811,6 +8811,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42
@@ -8855,10 +8859,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (27)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8875,6 +8875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42
@@ -8919,10 +8923,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -8939,6 +8939,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.887
@@ -8983,10 +8987,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (25)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -9003,6 +9003,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.65
@@ -9047,10 +9051,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (32)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -9067,6 +9067,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.408
@@ -9111,10 +9115,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (29)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -9131,6 +9131,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.65
@@ -9175,10 +9179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (31)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -9195,6 +9195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.737
@@ -9239,10 +9243,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (19)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -9259,6 +9259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.977
@@ -9303,10 +9307,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (21)
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
@@ -9323,6 +9323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3419540352255891406}
     m_Modifications:
+    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
+      propertyPath: m_Name
+      value: WoofFence_04 (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.14
@@ -9366,10 +9370,6 @@ PrefabInstance:
     - target: {fileID: 4710645877774286, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1126858092717654, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
-      propertyPath: m_Name
-      value: WoofFence_04 (23)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64838805642202238, guid: d61a1f148865c424f90ee738d75c2351, type: 3}
