@@ -44,12 +44,9 @@ public class Unit_Base : MonoBehaviour
     float startTime = 0.1f;
 
 	Vector3 lastPos;
-    [SerializeField]
-    LayerMask floacklayer ;
-    [SerializeField]
-    float flockradius = 1;
-    [SerializeField]
-    float flockStrength = 1;
+    [SerializeField] LayerMask floacklayer ;
+    [SerializeField] float flockradius = 1;
+    [SerializeField] float flockStrength = 1;
 
     void Flock()
     {
@@ -60,7 +57,7 @@ public class Unit_Base : MonoBehaviour
         {
             if (colls[i].GetComponent<Unit_Base>() != null) {
                 totalcolls++;
-                flockVector += (transform.position - colls[i].transform.position).normalized * Mathf.Lerp(1,0, Vector3.Distance(transform.position,colls[i].transform.position) / flockradius);
+                flockVector += (transform.position - colls[i].transform.position).normalized * Mathf.Lerp(1, 0, Vector3.Distance(transform.position,colls[i].transform.position) / flockradius);
             }
         }
         if(totalcolls > 0)
@@ -162,6 +159,7 @@ public class Unit_Base : MonoBehaviour
 				if (gameObject.GetComponent<States_Melee>() != null )
 				{
                     States_Melee myMelee = GetComponent<States_Melee>();
+                    myMelee.hardMoving = true;
                     myMelee.AttackEnemy(hit.collider.transform.parent.gameObject);
 				}
 				//else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
@@ -344,4 +342,11 @@ public class Unit_Base : MonoBehaviour
 
 	}
 
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, flockradius);
+    }
 }

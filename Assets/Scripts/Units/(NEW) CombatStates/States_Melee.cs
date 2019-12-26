@@ -22,7 +22,7 @@ public class States_Melee : MonoBehaviour
 	Vector3 lastPos;
 
 	public bool ignoreStates = false;
-	bool hardMoving = false;
+	public bool hardMoving = false;
 
 	public enum State
     {
@@ -166,7 +166,7 @@ public class States_Melee : MonoBehaviour
             if (state != State.normal)
             {
                 if (currentTarget.layer != 0)   //CUANDO HARDCODEA ATAQUE COGE DE TARGET AL SELECTOR DEL TARGET, QUE TIENE LAYER 0 (Default) ?!?!?!CUIDAO?!?!!?
-                    MoveTo(positiontocheck);     //que cuando pase de estado de alerta a normal, se quede quieto, no busque la última posición
+                    MoveTo(transform.position);     //que cuando pase de estado de alerta a normal, se quede quieto, no busque la última posición
             }
             currentTarget = null;
             toMovePoint = null;
@@ -179,8 +179,10 @@ public class States_Melee : MonoBehaviour
 		//if (bestTarget == null /*&& Vector3.Dis*/) //PONER QUE SE MUEVA, SI PASA DE ESA DISTANCIA NO HACE CASO AL RESTO
 		if (!hardMoving && currentTarget == null)
         {
-            CheckEnemyAtPosition(transform.position);
+
         }
+        CheckEnemyAtPosition(transform.position);
+
 
     }
     #endregion
