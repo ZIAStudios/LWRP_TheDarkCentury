@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5667701198344668126
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,9 +20,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Well_roof
+  m_Name: House_4_roof 8
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -29,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ambient_Occlusion_map_input:
-        m_Texture: {fileID: 2800000, guid: fa82621978ec44146af3bc1fb3ef9cf2, type: 3}
+        m_Texture: {fileID: 2800000, guid: b838fa83c90eed34f9c29a27bdf9c290, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -37,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 507b07135d3b6344598cac80504f095e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Copper_grayscale2:
@@ -61,11 +74,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_mask_2_map_input:
-        m_Texture: {fileID: 2800000, guid: b6db5e976f7b102428fa075c7a02f327, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Edge_mask_map_input:
-        m_Texture: {fileID: 2800000, guid: 328271a2b7dbdab4bbaa4ac089692ca7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 99a483729aa975c40a85c342095e9a16, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -206,7 +219,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AO_level: 0.718
-    - _AO_shift: 0.592
+    - _AO_shift: 0.48
     - _AlphaClip: 0
     - _Alpha_cutout_level: 1
     - _Alpha_cutout_mask_map_input: 1
@@ -217,12 +230,12 @@ Material:
     - _Cull: 2
     - _Cutoff: 0
     - _DetailNormal_map_inputMapScale: 1
-    - _Detail_2_level: 1
-    - _Detail_Smoothness_shift: 0
-    - _Detail_level: 1
+    - _Detail_2_level: 0
+    - _Detail_Smoothness_shift: 0.675
+    - _Detail_level: 0.399
     - _Detail_smoothness: 0.207
     - _DstBlend: 0
-    - _Edge_wear: 0.473
+    - _Edge_wear: 0.063
     - _Emmisive_intensity: 0
     - _EnvironmentReflections: 1
     - _Float0: 1
@@ -231,12 +244,12 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Material_Smoothness: 0.492
-    - _Material_Smoothness_shift: 0.211
+    - _Material_Smoothness_shift: 0
     - _Metal_object: 0
     - _Metallic: 0
     - _Metalobjectusesmettalicsmoothnesmap: 0
     - _Mettalic_shift: 0
-    - _Mettallic_shift: 0
+    - _Mettallic_shift: 0.12
     - _Mode: 0
     - _Moss_level: 1
     - _Moss_smoothness: 0.8681929
@@ -248,7 +261,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Roof_color_difference: 5
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _Smoothness_shift: 0.462
     - _SpecularHighlights: 1
@@ -261,34 +274,21 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 0.5660378, g: 0.28519374, b: 0.2322891, a: 1}
+    - _BaseColor: {r: 0.6698113, g: 0.18492046, b: 0.1484959, a: 1}
     - _Base_Color: {r: 0.60294116, g: 0.012755641, b: 0, a: 0}
-    - _Base_color: {r: 0.29411763, g: 0.041089967, b: 0.041089967, a: 0}
+    - _Base_color: {r: 0.36599994, g: 0.21531901, b: 0.09955197, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color3: {r: 0.6553948, g: 0.7058823, b: 0.15051875, a: 0}
     - _Coopper_color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
-    - _Detail_2_color: {r: 0.25545114, g: 0.33088237, b: 0.043793257, a: 0}
-    - _Detail_color: {r: 0.25490198, g: 0.32941177, b: 0.043137256, a: 0}
+    - _Detail_2_color: {r: 0, g: 0.9779412, b: 0.7756083, a: 0}
+    - _Detail_color: {r: 1, g: 0.8482759, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emmsivie_color: {r: 0.9779412, g: 0.9210103, b: 0.68312067, a: 0}
+    - _Emmsivie_color: {r: 0.9779412, g: 0.68922037, b: 0.68312067, a: 0}
     - _Material_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Moss_Color: {r: 0.6553948, g: 0.7058823, b: 0.15051866, a: 0}
     - _Moss_color: {r: 0, g: 0.5588235, b: 0.0038539239, a: 0}
     - _Roof_color: {r: 0.42647037, g: 0.16003442, b: 0.08153098, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tree_01_color: {r: 1, g: 1, b: 1, a: 0}
     - _Tree_edges_light_color: {r: 1, g: 1, b: 1, a: 0}
     - _Wood_tiling: {r: 1, g: 1, b: 0, a: 0}
---- !u!114 &5047397265810569578
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
