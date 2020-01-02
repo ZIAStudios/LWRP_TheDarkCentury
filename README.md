@@ -26,7 +26,7 @@ RTS with no materials
   -  Padre (Box colldier trigger, |Building_boost| ) (layer - Sub Building)
     - PointToMove ( Componente box collider con el tamaño para que detecte a un aldeano entrar, trigger |Building_boostPoint|)
     - Feedback (objeto que se activa y desactiva dependiendo de si hay un aldeano en el punto o no)
-  
+    - Poner tags
 
 - PERSONAJES 
   - Padre (componenetes |Unit_Base|(esto lo tienen todos) |Unit_Melee Unit_Range|(si son tropa)) (layer - Player)
