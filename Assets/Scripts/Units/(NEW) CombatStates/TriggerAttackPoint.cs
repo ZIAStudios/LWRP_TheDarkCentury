@@ -17,16 +17,17 @@ public class TriggerAttackPoint : MonoBehaviour
 
 		gameObject.GetComponentInParent<Positions>().positionToMove[index] = movingToPoint;
 
-
-		if (enemyInPoint.Length == 1) //si hay un enemigo dentro se vacía el array
-        {	
-
-        }
-        if (enemyInPoint.Length < 1) // si no hay un enemigo se rellena ese index del array
+        if (movingToPoint)
         {
+            if (enemyInPoint.Length == 1) //si hay un enemigo dentro se vacía el array
+            {
 
+            }
+            if (enemyInPoint.Length < 1) // si no hay un enemigo se rellena ese index del array
+            {
+
+            }
         }
-
 
 
     }

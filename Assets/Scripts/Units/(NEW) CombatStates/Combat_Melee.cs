@@ -54,10 +54,12 @@ public class Combat_Melee : MonoBehaviour
 		AlertState();
 	}
 
+	#region AlertState() - State where detects the enemy
 	void AlertState()
 	{
 		CheckEnemyAtPosition(transform.position);
 	}
+
 	public void CheckEnemyAtPosition(Vector3 positiontocheck)
 	{
 		Collider[] colliders = Physics.OverlapSphere(positiontocheck, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
@@ -79,7 +81,6 @@ public class Combat_Melee : MonoBehaviour
 			toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
 			
 				toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
-
 		}
 		else
 		{
@@ -87,9 +88,11 @@ public class Combat_Melee : MonoBehaviour
 			currentTarget = null;
 			toMovePoint = null;
 		}
-
-
 	}
+
+	#endregion
+
+
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;

@@ -47,28 +47,8 @@ public class Unit_Base : MonoBehaviour
     [SerializeField] LayerMask floacklayer ;
     [SerializeField] float flockradius = 1;
     [SerializeField] float flockStrength = 1;
-
-    void Flock()
-    {
-        Collider[] colls = Physics.OverlapSphere( transform.position, flockradius, floacklayer);
-        Vector3 flockVector = Vector3.zero;
-        int totalcolls = 0;
-        for(int i = 0; i < colls.Length; i++)
-        {
-            if (colls[i].GetComponent<Unit_Base>() != null) {
-                totalcolls++;
-                flockVector += (transform.position - colls[i].transform.position).normalized * Mathf.Lerp(1, 0, Vector3.Distance(transform.position,colls[i].transform.position) / flockradius);
-            }
-        }
-        if(totalcolls > 0)
-        {
-            flockVector /= totalcolls;
-            //Debug.Log(flockVector);
-        }
-        agent.Move (flockVector * flockStrength);
-    }
-
-	private void Awake()
+    
+    private void Awake()
     {
 		anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();   
@@ -264,6 +244,30 @@ public class Unit_Base : MonoBehaviour
     }
     #endregion
 
+    #region Flock() - Space between units
+    void Flock()
+    {
+        Collider[] colls = Physics.OverlapSphere(transform.position, flockradius, floacklayer);
+        Vector3 flockVector = Vector3.zero;
+        int totalcolls = 0;
+        for (int i = 0; i < colls.Length; i++)
+        {
+            if (colls[i].GetComponent<Unit_Base>() != null)
+            {
+                totalcolls++;
+                flockVector += (transform.position - colls[i].transform.position).normalized * Mathf.Lerp(1, 0, Vector3.Distance(transform.position, colls[i].transform.position) / flockradius);
+            }
+        }
+        if (totalcolls > 0)
+        {
+            flockVector /= totalcolls;
+            //Debug.Log(flockVector);
+        }
+        agent.Move(flockVector * flockStrength);
+    }
+    #endregion
+
+    #region Die()
     public void Die()
     {
         if (!alreadySpawns) //cuando muere si esta ya spawneado y no es clon de la base, no se remueve de la lista (porque no tiene)
@@ -317,13 +321,15 @@ public class Unit_Base : MonoBehaviour
 
     }
 
-    public void ResetStats()
+	public void ResetStats()
     {
 
         Start();
     }
+    #endregion
 
-	void Animations()
+    #region Animations() - Objects animations
+    void Animations()
 	{
 		Vector3 curPos = transform.position;
 		//if (curPos.x  >= lastPos.x - 0.0001 || curPos.x <= lastPos.x + 0.0001 || curPos.z >= lastPos.z - 0.0001 || curPos.z <= lastPos.z + 0.0001)
@@ -341,10 +347,11 @@ public class Unit_Base : MonoBehaviour
 		}
 
 	}
+	#endregion
 
 
 
-    private void OnDrawGizmosSelected()
+	private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, flockradius);
