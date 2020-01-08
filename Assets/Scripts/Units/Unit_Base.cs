@@ -63,7 +63,7 @@ public class Unit_Base : MonoBehaviour
         if(totalcolls > 0)
         {
             flockVector /= totalcolls;
-            Debug.Log(flockVector);
+            //Debug.Log(flockVector);
         }
         agent.Move (flockVector * flockStrength);
     }
