@@ -14,7 +14,7 @@ public class Combat_Melee : MonoBehaviour
 	[SerializeField] public LayerMask maskToChase;
 
 	public GameObject currentTarget;
-	Transform toMovePoint;
+	public Transform toMovePoint;
 
 	[HideInInspector] public bool onAttackPoint = false;
 
@@ -24,13 +24,15 @@ public class Combat_Melee : MonoBehaviour
 	Vector3 lastPos;
 
 	public bool ignoreStates = false;
-	public bool hardMoving = false;
+	public bool clickOnEnemy = false;
 
 	public enum State
 	{
 		normal,
 		alert,
 		combat,
+        forceMove,
+        onEnemy
 	}
 	public State state;
 
@@ -50,12 +52,69 @@ public class Combat_Melee : MonoBehaviour
 
 
 	void Update()
-	{
+	{   
+        //Cuando se haga click en una tropa enemiga y esta muera, que vuelva a estado normal
+        if (clickOnEnemy && !toMovePoint.gameObject.activeInHierarchy)
+        {
+            toMovePoint = null;
+            clickOnEnemy = false;
+        }
+
 		AlertState();
+        MoveStates();
+
 	}
 
-	#region AlertState() - State where detects the enemy
-	void AlertState()
+
+    #region MoveStates()
+
+    private void MoveStates()
+    {
+        switch (state)
+        {
+            case State.alert:
+                MoveTo(toMovePoint.position);
+                break;
+
+            case State.combat:
+                MoveTo(transform.position);
+                break;
+
+            case State.forceMove:
+
+                break;
+
+            case State.onEnemy:
+
+                break;
+                
+        }
+    }
+
+    #endregion
+
+    #region MoveTo()/ FaceTarget() - Where To Move / Face the enemy when combat state
+    void MoveTo(Vector3 position) //cambiando al varias entre estado alerta y combate
+    {
+        if (position != null)
+        {
+            agent.SetDestination(position);
+        }
+    }
+
+    void FaceTarget() //Face the target
+    {
+        if (currentTarget != null)
+        {
+            Vector3 direction = (currentTarget.transform.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        }
+    }
+    #endregion
+
+    #region AlertState() - State where detects the enemy
+    void AlertState()
 	{
 		CheckEnemyAtPosition(transform.position);
 	}
@@ -75,25 +134,47 @@ public class Combat_Melee : MonoBehaviour
 			}
 		}
 
-		if (colliders.Length != (uint)0)
-		{
-			if (toMovePoint == null)
-			toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);     //función para ir a por el punto del enemigo libre más cercano
-			
-				toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
-		}
-		else
-		{
-			toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
-			currentTarget = null;
-			toMovePoint = null;
-		}
+        if (!clickOnEnemy)
+        {
+            if (colliders.Length != (uint)0)
+            {
+                if (toMovePoint == null)
+                {
+                    //función para ir a por el punto del enemigo libre más cercano
+                    toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);
+
+                    toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
+
+                    state = State.alert;
+                }
+
+            }
+            else
+            {
+                toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
+                currentTarget = null;
+                toMovePoint = null;
+                //Cambio de State a no ser que sea forceState (fuerza  amoverse da igual el estado)
+                if (state != State.forceMove)
+                state = State.normal;
+            }
+        }
+
 	}
 
-	#endregion
+    //Llama desde UNIT_BASE y setea al clickar sobre el enemigo
+    public void SetEnemy(GameObject target)
+    {
+        toMovePoint = target.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);
+        if (!toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint)
+            print("false");
+        toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
+
+    }
+    #endregion
 
 
-	private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(transform.position, alertRadius);

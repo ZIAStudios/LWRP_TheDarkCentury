@@ -85,4 +85,12 @@ public class Positions : MonoBehaviour
     }
     #endregion
 
+    public void Restart()
+    {
+        for (int i = 0; i < positionsToAttack.Length; i++)
+        {
+            positionsToAttack[i].GetComponent<TriggerAttackPoint>().movingToPoint = false;
+        }
+    }
+
 }

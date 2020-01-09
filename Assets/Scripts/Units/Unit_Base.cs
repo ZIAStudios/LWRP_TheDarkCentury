@@ -74,6 +74,11 @@ public class Unit_Base : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Y))
+        {
+            ResetStats();
+        }
+
         if (buildingTag != "")
             building = GameObject.FindWithTag(buildingTag).GetComponent<Building>(); //GRAN GUARRADA Coge el edifio con el tag que se le haya puesto
 
@@ -112,6 +117,7 @@ public class Unit_Base : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
+            //H
 			if (Physics.Raycast(ray, out hit, 400, LayerMask.NameToLayer("Enemy")))
 			{
 				print("Hit Enemy");
@@ -136,16 +142,19 @@ public class Unit_Base : MonoBehaviour
 
 				#region If this.gameobject have STATE_MELEE and hit enemy
 				//Si el enemigo tiene States_Melee
-				if (gameObject.GetComponent<States_Melee>() != null )
+				if (gameObject.GetComponent<Combat_Melee>() != null )
 				{
-                    States_Melee myMelee = GetComponent<States_Melee>();
-                    myMelee.hardMoving = true;
-                    myMelee.AttackEnemy(hit.collider.transform.parent.gameObject);
-				}
-				//else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
-				//gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
-				#endregion
-			}
+                    Combat_Melee myMelee = GetComponent<Combat_Melee>();
+                    if (!myMelee.clickOnEnemy)
+                    myMelee.SetEnemy(hit.collider.transform.parent.gameObject);
+
+                    myMelee.clickOnEnemy = true;
+
+                }
+                //else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
+                //gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
+                #endregion
+            }
 			else if (Physics.Raycast(ray, out hit, 200, movementMask))
 			{
 				#region Sound - When click on ground with selected troops
@@ -162,9 +171,11 @@ public class Unit_Base : MonoBehaviour
 					}
 					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
 				}
-				#endregion
+                #endregion
 
-				#region If this.gameobject have STATE_MELEE and hit ground
+                #region If this.gameobject have STATE_MELEE and hit ground
+
+                gameObject.GetComponent<Combat_Melee>().clickOnEnemy = false;
 
 				if (gameObject.GetComponent<States_Melee>() != null)
 				{
@@ -323,8 +334,8 @@ public class Unit_Base : MonoBehaviour
 
 	public void ResetStats()
     {
-
         Start();
+        gameObject.GetComponent<Positions>().Restart();
     }
     #endregion
 
