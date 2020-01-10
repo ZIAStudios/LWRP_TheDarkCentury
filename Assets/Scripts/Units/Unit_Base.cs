@@ -149,6 +149,7 @@ public class Unit_Base : MonoBehaviour
                     myMelee.SetEnemy(hit.collider.transform.parent.gameObject);
 
                     myMelee.clickOnEnemy = true;
+                    myMelee.state = Combat_Melee.State.clickEnemy;
 
                 }
                 //else -------------------------> PONER ESTO BIEN PARA EL ARQUERO

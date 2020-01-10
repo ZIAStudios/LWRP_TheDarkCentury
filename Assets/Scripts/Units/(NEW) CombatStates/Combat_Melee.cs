@@ -32,7 +32,7 @@ public class Combat_Melee : MonoBehaviour
 		alert,
 		combat,
         forceMove,
-        onEnemy
+        clickEnemy
 	}
 	public State state;
 
@@ -53,6 +53,11 @@ public class Combat_Melee : MonoBehaviour
 
 	void Update()
 	{   
+		if (state != State.clickEnemy && clickOnEnemy)
+		{
+			clickOnEnemy = false;
+		}
+
         //Cuando se haga click en una tropa enemiga y esta muera, que vuelva a estado normal
         if (clickOnEnemy && !toMovePoint.gameObject.activeInHierarchy)
         {
@@ -60,7 +65,10 @@ public class Combat_Melee : MonoBehaviour
             clickOnEnemy = false;
         }
 
+		CombatState();
 		AlertState();
+
+        FaceTarget();
         MoveStates();
 
 	}
@@ -84,8 +92,8 @@ public class Combat_Melee : MonoBehaviour
 
                 break;
 
-            case State.onEnemy:
-
+            case State.clickEnemy:
+                MoveTo(toMovePoint.position);
                 break;
                 
         }
@@ -124,18 +132,20 @@ public class Combat_Melee : MonoBehaviour
 		Collider[] colliders = Physics.OverlapSphere(positiontocheck, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
 		int lowestValue = 20;                   //Valor que nunca se puede superar (el maximo valos es el máximo de tropas atacando)
 
-		foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
+		if (!clickOnEnemy)
 		{
-			int value = item.gameObject.GetComponent<Positions>().positionsInUse;
-			if (value < lowestValue)
-			{
-				lowestValue = value;
-				currentTarget = item.gameObject;
-			}
-		}
 
-        if (!clickOnEnemy)
-        {
+			foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
+			{
+				int value = item.gameObject.GetComponent<Positions>().positionsInUse;
+				if (value < lowestValue)
+				{
+					lowestValue = value;
+					currentTarget = item.gameObject;
+				}
+			}
+
+        
             if (colliders.Length != (uint)0)
             {
                 if (toMovePoint == null)
@@ -171,10 +181,69 @@ public class Combat_Melee : MonoBehaviour
         toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
 
     }
-    #endregion
+	#endregion
 
+	#region CombatState()
+	public void CombatState()
+	{
+		if (currentTarget != null)
+		{
+			if (toMovePoint != null)
+			{
+				float distance = Vector3.SqrMagnitude(toMovePoint.position - transform.position);
+				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 1)
+				{
+					state = State.combat;
+				}
 
-    private void OnDrawGizmosSelected()
+				//if (state == State.combat)
+				else
+				{
+					if (distance > gameObject.GetComponent<CapsuleCollider>().radius && !clickOnEnemy)
+					{
+						state = State.alert;
+					}
+				}
+			}
+		}
+	}
+	#endregion
+
+	#region Animations()
+
+	void Animations()
+	{
+		Vector3 curPos = transform.position;
+		if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
+		{
+			anim.SetBool("Move", false);
+		}
+		else
+		{
+			lastPos = curPos;
+			anim.SetBool("Move", true);
+			anim.SetBool("Attacking", false);
+
+		}
+		if (state == State.alert)
+		{
+			anim.SetBool("Attacking", false);
+
+		}
+		if (state == State.combat)
+		{
+			anim.SetBool("Attacking", true);
+			anim.SetBool("Move", false);
+
+		}
+		if (state == State.normal)
+		{
+			anim.SetBool("Attacking", false);
+		}
+	}
+
+	#endregion
+	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(transform.position, alertRadius);
