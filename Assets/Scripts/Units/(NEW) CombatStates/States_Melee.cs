@@ -56,7 +56,7 @@ public class States_Melee : MonoBehaviour
 			MoveTo(toMovePoint.position);
 		}
 
-		print(distance);
+		//print(distance);
 
 		Animations();
 

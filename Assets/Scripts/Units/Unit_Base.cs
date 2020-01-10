@@ -145,11 +145,12 @@ public class Unit_Base : MonoBehaviour
 				if (gameObject.GetComponent<Combat_Melee>() != null )
 				{
                     Combat_Melee myMelee = GetComponent<Combat_Melee>();
-                    if (!myMelee.clickOnEnemy)
+                    //if (!myMelee.clickOnEnemy)
                     myMelee.SetEnemy(hit.collider.transform.parent.gameObject);
 
                     myMelee.clickOnEnemy = true;
                     myMelee.state = Combat_Melee.State.clickEnemy;
+
 
                 }
                 //else -------------------------> PONER ESTO BIEN PARA EL ARQUERO

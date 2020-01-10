@@ -65,12 +65,15 @@ public class Combat_Melee : MonoBehaviour
             clickOnEnemy = false;
         }
 
+        Animations();
+
 		CombatState();
 		AlertState();
 
         FaceTarget();
         MoveStates();
 
+        print(currentTarget + gameObject.name);
 	}
 
 
@@ -134,39 +137,40 @@ public class Combat_Melee : MonoBehaviour
 
 		if (!clickOnEnemy)
 		{
-
-			foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
-			{
-				int value = item.gameObject.GetComponent<Positions>().positionsInUse;
-				if (value < lowestValue)
-				{
-					lowestValue = value;
-					currentTarget = item.gameObject;
-				}
-			}
-
-        
-            if (colliders.Length != (uint)0)
+            if (currentTarget == null)
             {
-                if (toMovePoint == null)
+                foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
                 {
-                    //función para ir a por el punto del enemigo libre más cercano
-                    toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);
-
-                    toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
-
-                    state = State.alert;
+                    int value = item.gameObject.GetComponent<Positions>().positionsInUse;
+                    if (value < lowestValue)
+                    {
+                        lowestValue = value;
+                        currentTarget = item.gameObject;
+                    }
                 }
 
-            }
-            else
-            {
-                toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
-                currentTarget = null;
-                toMovePoint = null;
-                //Cambio de State a no ser que sea forceState (fuerza  amoverse da igual el estado)
-                if (state != State.forceMove)
-                state = State.normal;
+                if (colliders.Length > 0)
+                {
+                    if (toMovePoint == null)
+                    {
+
+                        //función para ir a por el punto del enemigo libre más cercano
+                        toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);
+
+                        toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
+
+                        state = State.alert;
+                    }
+                }
+                else
+                {
+                    toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
+                    currentTarget = null;
+                    toMovePoint = null;
+                    //Cambio de State a no ser que sea forceState (fuerza  amoverse da igual el estado)
+                    if (state != State.forceMove)
+                        state = State.normal;
+                }
             }
         }
 
@@ -179,6 +183,8 @@ public class Combat_Melee : MonoBehaviour
         if (!toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint)
             print("false");
         toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
+
+        currentTarget = target;
 
     }
 	#endregion
@@ -206,12 +212,39 @@ public class Combat_Melee : MonoBehaviour
 				}
 			}
 		}
+
+        
+
 	}
-	#endregion
+    #endregion
 
-	#region Animations()
+    #region HitEnemy()
+    //Función para activar en la animación para hacer daño, ya que TakeDamage es de uno mismo y no se puede hacer por animación
+    void HitEnemy()
+    {
+        var enemy = currentTarget.GetComponent<Unit_Base>();
 
-	void Animations()
+        enemy.anim.SetBool("TakeDamage", true);
+        enemy.TakeDamage(unit.damage);
+
+        float hitSound = Random.Range(0, 4);
+        if (hitSound <= 2)
+        {
+            FindObjectOfType<AudioManager>().Play("combate");
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("combate1");
+        }
+
+        currentTarget.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
+
+    }
+    #endregion
+
+    #region Animations()
+
+    void Animations()
 	{
 		Vector3 curPos = transform.position;
 		if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
