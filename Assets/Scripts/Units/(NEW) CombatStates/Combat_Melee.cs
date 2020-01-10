@@ -73,7 +73,6 @@ public class Combat_Melee : MonoBehaviour
         FaceTarget();
         MoveStates();
 
-        print(currentTarget + gameObject.name);
 	}
 
 
@@ -148,9 +147,10 @@ public class Combat_Melee : MonoBehaviour
                         currentTarget = item.gameObject;
                     }
                 }
-
+            }
                 if (colliders.Length > 0)
                 {
+
                     if (toMovePoint == null)
                     {
 
@@ -164,14 +164,17 @@ public class Combat_Melee : MonoBehaviour
                 }
                 else
                 {
+                    if (toMovePoint != null)
                     toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
+
                     currentTarget = null;
                     toMovePoint = null;
                     //Cambio de State a no ser que sea forceState (fuerza  amoverse da igual el estado)
                     if (state != State.forceMove)
                         state = State.normal;
+
                 }
-            }
+            
         }
 
 	}

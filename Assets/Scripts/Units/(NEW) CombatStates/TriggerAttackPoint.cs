@@ -11,12 +11,12 @@ public class TriggerAttackPoint : MonoBehaviour
 
     public int index = 0; //SI VA MAL ES PORQUE HAY UQE EDITARLO PARA CADA PUNTO DE ATAQUE DE LA ESCENA
 
-    /*private void Update()
+    private void Update()
     {   //Si detecta la "layerToDetect"
-        enemyInPoint = Physics.OverlapSphere(transform.position, radius, layerToDetect); //Si detecta enemigo dentro del overlap, este se elimina de la lista
+        //enemyInPoint = Physics.OverlapSphere(transform.position, radius, layerToDetect); //Si detecta enemigo dentro del overlap, este se elimina de la lista
 
 		gameObject.GetComponentInParent<Positions>().positionToMove[index] = movingToPoint;
-
+        /*
         if (movingToPoint)
         {
             if (enemyInPoint.Length == 1) //si hay un enemigo dentro se vacía el array
@@ -28,9 +28,9 @@ public class TriggerAttackPoint : MonoBehaviour
 
             }
         }
+        */
 
-
-    }*/
+    }
 
     private void OnDrawGizmosSelected()
     {

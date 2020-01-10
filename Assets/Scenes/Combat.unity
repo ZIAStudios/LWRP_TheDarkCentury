@@ -202,6 +202,11 @@ PrefabInstance:
       propertyPath: floacklayer.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
+        type: 3}
+      propertyPath: damage
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576966, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: distance
