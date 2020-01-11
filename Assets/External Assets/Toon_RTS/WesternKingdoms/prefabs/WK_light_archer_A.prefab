@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 461784}
   - component: {fileID: 9516174}
   m_Layer: 0
-  m_Name: Arquero
+  m_Name: WK_light_archer_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,7 +708,7 @@ Animator:
   m_GameObject: {fileID: 147264}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 635180035812f964db1d9529cbb170f2, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5edfc06b74b3cf4d91e34be890afa39, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1166,8 +1166,7 @@ Transform:
   m_LocalRotation: {x: 0.70640385, y: -0.02440202, z: -0.024421396, w: 0.7069666}
   m_LocalPosition: {x: -0.22806452, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
-  m_Children:
-  - {fileID: 8811669051045302649}
+  m_Children: []
   m_Father: {fileID: 435522}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1590,7 +1589,8 @@ Transform:
   m_LocalRotation: {x: 0.64703274, y: 0.26906112, z: 0.20527594, w: 0.68323976}
   m_LocalPosition: {x: 0.027319795, y: 0.019805476, z: -0.033108026}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
-  m_Children: []
+  m_Children:
+  - {fileID: 8811669051045302649}
   m_Father: {fileID: 468958}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1799,7 +1799,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 474584}
+    m_TransformParent: {fileID: 438622}
     m_Modifications:
     - target: {fileID: 100000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_Name
@@ -1807,31 +1807,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.111
+      value: 0.081
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.062
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.003
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000057601167
+      value: -0.09921338
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0.278387
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000057601163
+      value: 0.0050044707
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.9553179
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_RootOrder
@@ -1839,15 +1839,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -10.765
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -32.850002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 3.782
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d81c1e46115164ba142c77daddc911, type: 3}
