@@ -74,6 +74,8 @@ public class Unit_Base : MonoBehaviour
 
     void Update()
     {
+
+
         if (Input.GetKey(KeyCode.Y))
         {
             ResetStats();
@@ -159,8 +161,10 @@ public class Unit_Base : MonoBehaviour
             }
 			else if (Physics.Raycast(ray, out hit, 200, movementMask))
 			{
-				#region Sound - When click on ground with selected troops
-				float hitSound = Random.Range(0, 25);
+                Combat_Melee myMelee = GetComponent<Combat_Melee>();
+
+                #region Sound - When click on ground with selected troops
+                float hitSound = Random.Range(0, 25);
 				if (hitSound <= 2)
 				{
 					FindObjectOfType<AudioManager>().Play("Yes");
@@ -175,22 +179,21 @@ public class Unit_Base : MonoBehaviour
 				}
                 #endregion
 
-                #region If this.gameobject have STATE_MELEE and hit ground
+                #region If this.gameobject have COMBAT_MELEE and hit ground
 
                 gameObject.GetComponent<Combat_Melee>().clickOnEnemy = false;
 
-				if (gameObject.GetComponent<States_Melee>() != null)
+				if (gameObject.GetComponent<Combat_Melee>() != null)
 				{
-					if (gameObject.GetComponent<States_Melee>().state != States_Melee.State.normal)
-					{
-						gameObject.GetComponent<States_Melee>().ignoreStates = true;
-						gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
-					}
-
-					if (gameObject.GetComponent<States_Melee>().currentTarget != null)
-					{
-						gameObject.GetComponent<States_Melee>().currentTarget = null;
-					}
+                    if (!myMelee.ignoreStates)
+                    {
+                        //Cambio al estado de forceMove, cuando esta atacando o alerta y lo quieres sacar y moverlo a otro lado
+                        if (myMelee.state != Combat_Melee.State.normal && myMelee.state != Combat_Melee.State.forceMove)
+                        {
+                            myMelee.state = Combat_Melee.State.forceMove;
+                            gameObject.GetComponent<Combat_Melee>().ignoreStates = true;
+                        }
+                    }
 				}
 
 				//ESTO CAMBIARLO CUANDO SE QUEDE EL CÓDIGO NUEVO

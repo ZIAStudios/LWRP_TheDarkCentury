@@ -36,9 +36,10 @@ public class Combat_Melee : MonoBehaviour
 	}
 	public State state;
 
-	#endregion
+    #endregion
 
-	private void Awake()
+
+    private void Awake()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
@@ -52,8 +53,14 @@ public class Combat_Melee : MonoBehaviour
 
 
 	void Update()
-	{   
-		if (state != State.clickEnemy && clickOnEnemy)
+	{
+        if (ignoreStates)
+        {
+            currentTarget = null;
+            toMovePoint = null;
+        }
+
+        if (state != State.clickEnemy && clickOnEnemy)
 		{
 			clickOnEnemy = false;
 		}
@@ -67,9 +74,11 @@ public class Combat_Melee : MonoBehaviour
 
         Animations();
 
-		CombatState();
-		AlertState();
-
+        if (!ignoreStates)
+        {
+            CombatState();
+            AlertState();
+        }
         FaceTarget();
         MoveStates();
 
@@ -91,7 +100,22 @@ public class Combat_Melee : MonoBehaviour
                 break;
 
             case State.forceMove:
+                unit.MoveToPoint();
+                #region change state to normal and makes ignoreState = false
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit h;
+                if (Physics.Raycast(ray, out h, 200, unit.movementMask))
+                {
+                    float distance = Vector3.SqrMagnitude(h.point -transform.position);
+                    //cuando estas a X distancia del punto marcado vuelve al estado normal
+                    if (distance < 40)
+                    {
+                        state = State.normal;
+                        ignoreStates = false;
+                    }
 
+                }
+                #endregion
                 break;
 
             case State.clickEnemy:
@@ -279,6 +303,7 @@ public class Combat_Melee : MonoBehaviour
 	}
 
 	#endregion
+
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
