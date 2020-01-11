@@ -17,15 +17,6 @@ public class Unit_Range : MonoBehaviour
     Building building;
     Unit_Base unit;
 
-    #region States Fields
-    public bool wait;
-    public bool alert;
-    public bool combat;
-    public bool death;
-    [Space]
-    [SerializeField] bool ignoreStates;
-    #endregion
-
     #region Interaction Fields
     [SerializeField] LayerMask toChaseMask = 11;
     [Space]
@@ -57,11 +48,15 @@ public class Unit_Range : MonoBehaviour
         combat,
         death
     }
-    [HideInInspector] public State state;
+    public State state;
 
-    #endregion
+    Vector3 lastPos;
 
     Animator anim;
+
+    public bool ignoreStates = false;
+    #endregion
+
 
     private void Awake()
     {
@@ -84,26 +79,6 @@ public class Unit_Range : MonoBehaviour
 
     private void Update()
     {
-        if (agent.hasPath && state != State.combat)
-        {
-            anim.SetBool("Move", true);
-            anim.SetBool("Attacking", false);
-
-
-        }
-        else if (!agent.hasPath && state != State.combat)
-        {
-            anim.SetBool("Move", false);
-            anim.SetBool("Attacking", false);
-
-        }
-        else if (state == State.combat)
-        {
-            anim.SetBool("Attacking", true);
-            anim.SetBool("Move", false);
-
-        }
-
 
         height = proyectileHeight + transform.position.y;
 
@@ -116,30 +91,7 @@ public class Unit_Range : MonoBehaviour
             StateOfCombat();
         }
 
-        switch (state)
-        {
-            case State.wait:
-                wait = true;
-                alert = false;
-                combat = false;
-                break;
-            case State.alert:
-                wait = false;
-                alert = true;
-                combat = false;
-                break;
-            case State.combat:
-                wait = false;
-                alert = false;
-                combat = true;
-                break;
-
-
-        }
-        if (death)
-        {
-            state = State.death;
-        }
+        Animations();
     }
 
     #region ForceToMove() - The unit is force to move when state mode is alert or combat
@@ -148,8 +100,6 @@ public class Unit_Range : MonoBehaviour
         //Condiciones para que deje de atacar o estar alerta
         if (selec.isSelected && Input.GetMouseButtonDown(1))
         {
-
-
             if (state == State.combat || state == State.alert)
             {
                 ignoreStates = true;
@@ -271,7 +221,6 @@ public class Unit_Range : MonoBehaviour
     // Controla cuándo tiene que pasar al estado de combate
     void StateOfCombat()
     {
-
         // Cuando la distancia entre el enemigo y el soldado es menor a X, entran en combate.
         if (enemyToChase != null)
         {
@@ -282,15 +231,6 @@ public class Unit_Range : MonoBehaviour
                 state = State.combat;
 
 				combatDistance = distancePlus;
-                //currentTime -= Time.deltaTime; //timer each attack
-
-				//EL ATAQUE VA POR ANIMACIÓN
-                //if (currentTime <= 0)
-                //{
-                //    //LaunchObject();
-                //    //----------------------------------------------------> Llamar al ataque pertinente
-                //    currentTime = attackSpeed;
-                //}
 
             }
             else
@@ -302,34 +242,64 @@ public class Unit_Range : MonoBehaviour
     }
     #endregion
 
-    [HideInInspector] public GameObject obj;
-
-    #region LaunchObject() - Launches object towards the enemy set
-    private void LaunchObject()
+    #region HitEnemy()
+    //Función para activar en la animación para hacer daño, ya que TakeDamage es de uno mismo y no se puede hacer por animación
+    void HitEnemy()
     {
-        obj = objectPooler.GetPooledObject(proyectilePoolTag);
-        obj.transform.position = spawnProyectile.position;
-        obj.transform.rotation = spawnProyectile.rotation;
+        var enemy = enemyToChase.GetComponent<Unit_Base>();
 
-        Physics.gravity = Vector3.up * gravity;
-        obj.GetComponent<Rigidbody>().useGravity = true;
+        enemy.anim.SetBool("TakeDamage", true);
+        enemy.TakeDamage(unit.damage);
 
-        //Calcula la velocidad a la que sale el proyectil
-        float displacementY = (enemyToChase.transform.position.y - obj.transform.position.y);
-        Vector3 displacementXZ = new Vector3(enemyToChase.transform.position.x - obj.transform.position.x, 0, enemyToChase.transform.position.z - obj.transform.position.z);
-        
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));
+        float hitSound = Random.Range(0, 4);
+        if (hitSound <= 2)
+        {
+            //CAMBIAR SONIDOS POR SONIDO ARCO LANZANDOSE
+            //FindObjectOfType<AudioManager>().Play("combate");
+        }
+        else
+        {
+            //FindObjectOfType<AudioManager>().Play("combate1");
+        }
 
-        Vector3 finalVelocity = velocityXZ + velocityY;
-        obj.SetActive(true);
-        
-        obj.GetComponent<Rigidbody>().velocity = finalVelocity;
-        obj.GetComponent<Range_Proyectile>().proyectileDamage = unit.damage;
-
-        print("Shooted");
+        //enemyToChase.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
 
     }
+    #endregion
+
+    #region Animations()
+
+    void Animations()
+    {
+        Vector3 curPos = transform.position;
+        if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
+        {
+            anim.SetBool("Move", false);
+        }
+        else
+        {
+            lastPos = curPos;
+            anim.SetBool("Move", true);
+            anim.SetBool("Attacking", false);
+
+        }
+        if (state == State.alert)
+        {
+            anim.SetBool("Attacking", false);
+
+        }
+        if (state == State.combat)
+        {
+            anim.SetBool("Attacking", true);
+            anim.SetBool("Move", false);
+
+        }
+        if (state == State.wait)
+        {
+            anim.SetBool("Attacking", false);
+        }
+    }
+
     #endregion
 
     private void OnDrawGizmosSelected()

@@ -180,11 +180,10 @@ public class Unit_Base : MonoBehaviour
                 #endregion
 
                 #region If this.gameobject have COMBAT_MELEE and hit ground
-
-                gameObject.GetComponent<Combat_Melee>().clickOnEnemy = false;
-
-				if (gameObject.GetComponent<Combat_Melee>() != null)
-				{
+                if (gameObject.GetComponent<Combat_Melee>() != null)
+                { 
+                    gameObject.GetComponent<Combat_Melee>().clickOnEnemy = false;
+				
                     if (!myMelee.ignoreStates)
                     {
                         //Cambio al estado de forceMove, cuando esta atacando o alerta y lo quieres sacar y moverlo a otro lado
@@ -196,14 +195,6 @@ public class Unit_Base : MonoBehaviour
                     }
 				}
 
-				//ESTO CAMBIARLO CUANDO SE QUEDE EL CÓDIGO NUEVO
-				if (gameObject.GetComponent<Unit_Melee>() != null)
-				{
-					if (gameObject.GetComponent<Unit_Melee>().enemyToChase != null)
-					{
-						gameObject.GetComponent<Unit_Melee>().enemyToChase = null;
-					}
-				}
 				#endregion
 
 				agent.SetDestination(hit.point);
