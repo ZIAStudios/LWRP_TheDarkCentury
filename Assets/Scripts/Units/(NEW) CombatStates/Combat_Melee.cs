@@ -71,6 +71,15 @@ public class Combat_Melee : MonoBehaviour
             toMovePoint = null;
             clickOnEnemy = false;
         }
+        if (currentTarget != null)
+        {
+            if (!currentTarget.activeInHierarchy)
+            {
+                currentTarget = null;
+                toMovePoint = null;
+            }
+        }
+
 
         Animations();
 
