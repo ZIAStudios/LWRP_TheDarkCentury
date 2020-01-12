@@ -48,6 +48,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 5
 --- !u!1 &562637551
 GameObject:
@@ -97,6 +98,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 4
 --- !u!1 &830434023
 GameObject:
@@ -146,6 +148,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 1
 --- !u!1 &851554703
 GameObject:
@@ -195,6 +198,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 3
 --- !u!1 &1183489635
 GameObject:
@@ -293,6 +297,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 2
 --- !u!1 &1837068667
 GameObject:
@@ -342,6 +347,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 0
 --- !u!1 &548762566281212811
 GameObject:
@@ -374,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 548762566281212811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.99, y: 6.22, z: 37.97}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 548762567664476112}
   - {fileID: 548762567492290201}
@@ -488,6 +494,11 @@ MonoBehaviour:
   buildingTag: 
   knockbackPoint: {x: 0, y: 0, z: 0}
   alreadySpawns: 0
+  floacklayer:
+    serializedVersion: 2
+    m_Bits: 0
+  flockradius: 1
+  flockStrength: 1
 --- !u!114 &2132806986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +519,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  emptyPositions: 000000000000
+  positionToMove: 000000000000
   pos0: 0
   pos1: 0
   pos2: 0
