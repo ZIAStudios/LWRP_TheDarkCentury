@@ -26,18 +26,6 @@ public class Unit_Range : MonoBehaviour
 	float combatDistance = 10f;
 
 	public GameObject enemyToChase;
-    [Space]
-
-    [Header("What to Throw")]
-    [SerializeField] string proyectilePoolTag = "Arrow";
-    [SerializeField] Transform spawnProyectile;
-    [Space]
-    [SerializeField] float attackSpeed = 1f;
-    float currentTime;
-    [Space]
-    [SerializeField] float proyectileHeight = 10f;
-    float height;
-    [SerializeField] float gravity = -10f;
 
     
     [HideInInspector]
@@ -79,8 +67,6 @@ public class Unit_Range : MonoBehaviour
 
     private void Update()
     {
-
-        height = proyectileHeight + transform.position.y;
 
         ForceToMove();
         MoveStates();
@@ -131,8 +117,6 @@ public class Unit_Range : MonoBehaviour
                 break;
             case State.alert:
                 MoveTo(enemyToChase.transform.position);
-                currentTime = attackSpeed;       //sets the atack time
-
                 break;
             case State.combat:
                 MoveTo(transform.position);
@@ -183,8 +167,6 @@ public class Unit_Range : MonoBehaviour
         // Se encuentra el enemigo más cercano y se va a por él
         if (state != State.combat)
         {
-            currentTime = attackSpeed;
-
             if (potentialEnemiesToAttack.Count != 0) //programasiooo defensivaa
             {
                 enemyToChase = GetClosestEnemy(potentialEnemiesToAttack).gameObject;

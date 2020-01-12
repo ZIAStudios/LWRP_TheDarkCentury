@@ -5,55 +5,55 @@ using UnityEngine.AI;
 
 public class Combat_Melee : MonoBehaviour
 {
-	#region Variables
+    #region Variables
 
-	NavMeshAgent agent;
-	Animator anim;
-	Unit_Base unit;
+    NavMeshAgent agent;
+    Animator anim;
+    Unit_Base unit;
 
-	[SerializeField] public LayerMask maskToChase;
+    [SerializeField] public LayerMask maskToChase;
 
-	public GameObject currentTarget;
-	public Transform toMovePoint;
+    public GameObject currentTarget;
+    public Transform toMovePoint;
 
-	[HideInInspector] public bool onAttackPoint = false;
+    [HideInInspector] public bool onAttackPoint = false;
 
-	[SerializeField] public float alertRadius = 15f;
-	[SerializeField] float knockbackForce = 10f;
+    [SerializeField] public float alertRadius = 15f;
+    [SerializeField] float knockbackForce = 10f;
 
-	Vector3 lastPos;
+    Vector3 lastPos;
 
-	public bool ignoreStates = false;
-	public bool clickOnEnemy = false;
+    public bool ignoreStates = false;
+    public bool clickOnEnemy = false;
 
-	public enum State
-	{
-		normal,
-		alert,
-		combat,
+    public enum State
+    {
+        normal,
+        alert,
+        combat,
         forceMove,
         clickEnemy
-	}
-	public State state;
+    }
+    public State state;
 
     #endregion
 
 
     private void Awake()
-	{
-		agent = GetComponent<NavMeshAgent>();
-		anim = GetComponent<Animator>();
-		unit = GetComponent<Unit_Base>();
-	}
+    {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        unit = GetComponent<Unit_Base>();
+    }
 
-	void Start()
-	{
+    void Start()
+    {
 
-	}
+    }
 
 
-	void Update()
-	{
+    void Update()
+    {
         if (ignoreStates)
         {
             currentTarget = null;
@@ -61,9 +61,9 @@ public class Combat_Melee : MonoBehaviour
         }
 
         if (state != State.clickEnemy && clickOnEnemy)
-		{
-			clickOnEnemy = false;
-		}
+        {
+            clickOnEnemy = false;
+        }
 
         //Cuando se haga click en una tropa enemiga y esta muera, que vuelva a estado normal
         if (clickOnEnemy && !toMovePoint.gameObject.activeInHierarchy)
@@ -91,7 +91,7 @@ public class Combat_Melee : MonoBehaviour
         FaceTarget();
         MoveStates();
 
-	}
+    }
 
 
     #region MoveStates()
@@ -115,7 +115,7 @@ public class Combat_Melee : MonoBehaviour
                 RaycastHit h;
                 if (Physics.Raycast(ray, out h, 200, unit.movementMask))
                 {
-                    float distance = Vector3.SqrMagnitude(h.point -transform.position);
+                    float distance = Vector3.SqrMagnitude(h.point - transform.position);
                     //cuando estas a X distancia del punto marcado vuelve al estado normal
                     if (distance < 40)
                     {
@@ -130,7 +130,7 @@ public class Combat_Melee : MonoBehaviour
             case State.clickEnemy:
                 MoveTo(toMovePoint.position);
                 break;
-                
+
         }
     }
 
@@ -158,59 +158,62 @@ public class Combat_Melee : MonoBehaviour
 
     #region AlertState() - State where detects the enemy
     void AlertState()
-	{
-		CheckEnemyAtPosition(transform.position);
-	}
+    {
+        CheckEnemyAtPosition(transform.position);
+    }
 
-	public void CheckEnemyAtPosition(Vector3 positiontocheck)
-	{
-		Collider[] colliders = Physics.OverlapSphere(positiontocheck, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
-		int lowestValue = 20;                   //Valor que nunca se puede superar (el maximo valos es el máximo de tropas atacando)
+    public void CheckEnemyAtPosition(Vector3 positiontocheck)
+    {
+        Collider[] colliders = Physics.OverlapSphere(positiontocheck, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
+        int lowestValue = 20;                   //Valor que nunca se puede superar (el maximo valos es el máximo de tropas atacando)
 
-		if (!clickOnEnemy)
-		{
-            if (currentTarget == null)
-            {
-                foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
-                {
-                    int value = item.gameObject.GetComponent<Positions>().positionsInUse;
-                    if (value < lowestValue)
-                    {
-                        lowestValue = value;
-                        currentTarget = item.gameObject;
-                    }
-                }
-            }
-                if (colliders.Length > 0)
-                {
-
-                    if (toMovePoint == null)
-                    {
-
-                        //función para ir a por el punto del enemigo libre más cercano
-                        toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);
-
-                        toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
-
-                        state = State.alert;
-                    }
-                }
-                else
-                {
-                    if (toMovePoint != null)
-                    toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
-
-                    currentTarget = null;
-                    toMovePoint = null;
-                    //Cambio de State a no ser que sea forceState (fuerza  amoverse da igual el estado)
-                    if (state != State.forceMove)
-                        state = State.normal;
-
-                }
-            
+        if (clickOnEnemy)
+        {
+            return;
         }
 
-	}
+        if (currentTarget == null)
+        {
+            foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
+            {
+                int value = item.gameObject.GetComponent<Positions>().positionsInUse;
+                if (value < lowestValue)
+                {
+                    lowestValue = value;
+                    currentTarget = item.gameObject;
+                }
+            }
+        }
+        if (colliders.Length > 0)
+        {
+
+            if (toMovePoint == null)
+            {
+
+                //función para ir a por el punto del enemigo libre más cercano
+                toMovePoint = currentTarget.GetComponent<Positions>().BestPointToAttackFromTarget(transform.position);
+
+                toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = true;
+
+                state = State.alert;
+            }
+        }
+        else
+        {
+            if (toMovePoint != null)
+                toMovePoint.GetComponent<TriggerAttackPoint>().movingToPoint = false;
+
+            currentTarget = null;
+            toMovePoint = null;
+            //Cambio de State a no ser que sea forceState (fuerza  amoverse da igual el estado)
+            if (state != State.forceMove)
+                state = State.normal;
+
+        }
+
+
+
+    }
 
     //Llama desde UNIT_BASE y setea al clickar sobre el enemigo
     public void SetEnemy(GameObject target)
@@ -223,35 +226,35 @@ public class Combat_Melee : MonoBehaviour
         currentTarget = target;
 
     }
-	#endregion
+    #endregion
 
-	#region CombatState()
-	public void CombatState()
-	{
-		if (currentTarget != null)
-		{
-			if (toMovePoint != null)
-			{
-				float distance = Vector3.SqrMagnitude(toMovePoint.position - transform.position);
-				if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 1)
-				{
-					state = State.combat;
-				}
+    #region CombatState()
+    public void CombatState()
+    {
+        if (currentTarget != null)
+        {
+            if (toMovePoint != null)
+            {
+                float distance = Vector3.SqrMagnitude(toMovePoint.position - transform.position);
+                if (distance <= gameObject.GetComponent<CapsuleCollider>().radius + 10)
+                {
+                    state = State.combat;
+                }
 
-				//if (state == State.combat)
-				else
-				{
-					if (distance > gameObject.GetComponent<CapsuleCollider>().radius && !clickOnEnemy)
-					{
-						state = State.alert;
-					}
-				}
-			}
-		}
+                //if (state == State.combat)
+                else
+                {
+                    if (distance > gameObject.GetComponent<CapsuleCollider>().radius && !clickOnEnemy)
+                    {
+                        state = State.alert;
+                    }
+                }
+            }
+        }
 
-        
 
-	}
+
+    }
     #endregion
 
     #region HitEnemy()
@@ -281,42 +284,42 @@ public class Combat_Melee : MonoBehaviour
     #region Animations()
 
     void Animations()
-	{
-		Vector3 curPos = transform.position;
-		if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
-		{
-			anim.SetBool("Move", false);
-		}
-		else
-		{
-			lastPos = curPos;
-			anim.SetBool("Move", true);
-			anim.SetBool("Attacking", false);
+    {
+        Vector3 curPos = transform.position;
+        if (Vector3.SqrMagnitude(curPos - lastPos) <= 0.01)
+        {
+            anim.SetBool("Move", false);
+        }
+        else
+        {
+            lastPos = curPos;
+            anim.SetBool("Move", true);
+            anim.SetBool("Attacking", false);
 
-		}
-		if (state == State.alert)
-		{
-			anim.SetBool("Attacking", false);
+        }
+        if (state == State.alert)
+        {
+            anim.SetBool("Attacking", false);
 
-		}
-		if (state == State.combat)
-		{
-			anim.SetBool("Attacking", true);
-			anim.SetBool("Move", false);
+        }
+        if (state == State.combat)
+        {
+            anim.SetBool("Attacking", true);
+            anim.SetBool("Move", false);
 
-		}
-		if (state == State.normal)
-		{
-			anim.SetBool("Attacking", false);
-		}
-	}
+        }
+        if (state == State.normal)
+        {
+            anim.SetBool("Attacking", false);
+        }
+    }
 
-	#endregion
+    #endregion
 
-	private void OnDrawGizmosSelected()
-	{
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, alertRadius);
-	}
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, alertRadius);
+    }
 
 }
