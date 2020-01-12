@@ -24,8 +24,8 @@ TagManager:
   - SB_Slots
   - SB_Defense
   - SB_Attack
-  - P_Arrow
-  - E_Arrow
+  - Base_Player
+  - Base_Enemy
   layers:
   - Default
   - TransparentFX

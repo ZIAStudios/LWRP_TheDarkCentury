@@ -81,8 +81,8 @@ public class Unit_Base : MonoBehaviour
             ResetStats();
         }
 
-        if (buildingTag != "")
-            building = GameObject.FindWithTag(buildingTag).GetComponent<Building>(); //GRAN GUARRADA Coge el edifio con el tag que se le haya puesto
+        //if (buildingTag != "")
+        //    building = GameObject.FindWithTag(buildingTag).GetComponent<Building>(); //GRAN GUARRADA Coge el edifio con el tag que se le haya puesto
 
         agent.speed = speed;
         agent.angularSpeed = rotationSpeed;
