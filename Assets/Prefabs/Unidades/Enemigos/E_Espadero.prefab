@@ -205,6 +205,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 3
 --- !u!1 &8939513379856389034
 GameObject:
@@ -315,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 8939513379880674691}
   m_LocalRotation: {x: 0, y: -0.99938446, z: 0, w: 0.035082705}
   m_LocalPosition: {x: -3.63, y: 7.76, z: 13.39}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 8939513380435191539}
   - {fileID: 8939513380703505506}
@@ -430,6 +431,11 @@ MonoBehaviour:
   buildingTag: 
   knockbackPoint: {x: 0, y: 0, z: 0}
   alreadySpawns: 1
+  floacklayer:
+    serializedVersion: 2
+    m_Bits: 0
+  flockradius: 1
+  flockStrength: 1
 --- !u!114 &8939513379880674693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +456,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  emptyPositions: 000000000000
+  positionToMove: 000000000000
   pos0: 0
   pos1: 0
   pos2: 0
@@ -473,11 +479,12 @@ MonoBehaviour:
   maskToChase:
     serializedVersion: 2
     m_Bits: 1024
-  bestTarget: {fileID: 0}
+  currentTarget: {fileID: 0}
   onAttackPoint: 0
   alertRadius: 15
   knockbackForce: 0
   ignoreStates: 0
+  hardMoving: 0
   state: 0
 --- !u!1 &8939513379922815880
 GameObject:
@@ -527,6 +534,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 4
 --- !u!1 &8939513379953162572
 GameObject:
@@ -576,6 +584,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 1
 --- !u!1 &8939513379985515099
 GameObject:
@@ -625,6 +634,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 0
 --- !u!1 &8939513380285093962
 GameObject:
@@ -674,6 +684,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 2
 --- !u!1 &8939513380435398171
 GameObject:
@@ -2803,6 +2814,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 5
 --- !u!1 &8939513381055615815
 GameObject:

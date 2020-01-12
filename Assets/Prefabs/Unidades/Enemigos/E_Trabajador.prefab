@@ -48,6 +48,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 3
 --- !u!1 &689593759
 GameObject:
@@ -97,6 +98,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 4
 --- !u!1 &932284287
 GameObject:
@@ -146,6 +148,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 2
 --- !u!1 &1648126632
 GameObject:
@@ -195,6 +198,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 5
 --- !u!1 &1699266381
 GameObject:
@@ -244,6 +248,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 0
 --- !u!1 &1873031296
 GameObject:
@@ -342,6 +347,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 1
 --- !u!1 &7930616248452139559
 GameObject:
@@ -511,7 +517,7 @@ Transform:
   m_GameObject: {fileID: 7930616249558813666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.564001, y: -0.0000016454615, z: -234.2967}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 7930616248242661305}
   - {fileID: 7930616248616173296}
@@ -625,6 +631,11 @@ MonoBehaviour:
   buildingTag: 
   knockbackPoint: {x: 0, y: 0, z: 0}
   alreadySpawns: 0
+  floacklayer:
+    serializedVersion: 2
+    m_Bits: 0
+  flockradius: 1
+  flockStrength: 1
 --- !u!114 &1026352123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,7 +656,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  emptyPositions: 000000000000
+  positionToMove: 000000000000
   pos0: 0
   pos1: 0
   pos2: 0
@@ -724,7 +735,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
-    - target: {fileID: 13710158, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
+    - target: {fileID: 13721088, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
@@ -732,7 +743,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
-    - target: {fileID: 13721088, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
+    - target: {fileID: 13710158, guid: cdbe91a91060b1e4eb4bd0b52d578091, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc851844264c22f4c81c45df6c05894f, type: 2}
