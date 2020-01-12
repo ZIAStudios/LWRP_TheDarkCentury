@@ -61,7 +61,7 @@ public class States_Melee : MonoBehaviour
 			hardMoving = false;
 		}
 
-		print(distance);
+		//print(distance);
 
 		Animations();
 

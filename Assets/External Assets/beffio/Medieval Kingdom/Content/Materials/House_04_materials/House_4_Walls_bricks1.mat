@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: House_4_Walls_bricks1
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -165,12 +165,12 @@ Material:
     - _Detail_mask_2_level: 0
     - _Detail_mask_level: 0
     - _DstBlend: 0
-    - _EnvironmentReflections: 1
+    - _EnvironmentReflections: 0
     - _Float0: 0.34
     - _Global_Tiling: 3.46
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0
     - _Glossiness: 0.5
-    - _GlossyReflections: 1
+    - _GlossyReflections: 0
     - _Height_level: 0.07
     - _Metallic: 0
     - _MetallicAmount: 0
@@ -187,7 +187,7 @@ Material:
     - _RoughScale: 1
     - _Scale: 0.1
     - _ScatteringPower: 0.1
-    - _Smoothness: 0
+    - _Smoothness: 0.5
     - _SmoothnessScale: 0.73
     - _SmoothnessTextureChannel: 0
     - _Smoothness_Shift: 1
@@ -204,9 +204,9 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 0.9528302, g: 0.800142, b: 0.36405307, a: 1}
+    - _BaseColor: {r: 0.6691177, g: 0.6430707, b: 0.580558, a: 1}
     - _Base_Color: {r: 0.5808823, g: 0.5632084, b: 0.5168144, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.6691177, g: 0.6430707, b: 0.580558, a: 1}
     - _Color0: {r: 0, g: 0, b: 0, a: 0}
     - _Color1: {r: 1, g: 0, b: 0, a: 0}
     - _Color6: {r: 0.30147058, g: 0.29608938, b: 0.26600343, a: 0}
@@ -217,7 +217,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Global_tiling: {r: 1, g: 3, b: 0, a: 0}
     - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tiling_Global: {r: 2, g: 2, b: 0, a: 0}
     - _Tiling_height: {r: 1, g: 1, b: 0, a: 0}
     - _Tiling_world: {r: 1, g: 1, b: 0, a: 0}

@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: House_01_Fabric
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -294,7 +294,7 @@ Material:
     - _BumpScale: 1
     - _Concrete_smoothness: 1
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0
     - _DetailNormalMapScale: 1
     - _Detail_2_level: 0
     - _Detail_Smoothness_shift: 0.143
@@ -304,7 +304,7 @@ Material:
     - _Edge_: 1
     - _Edge_wear: 1
     - _Emmisive_intensity: 0
-    - _EnvironmentReflections: 0
+    - _EnvironmentReflections: 1
     - _Float0: 0
     - _Float1: 1
     - _Float2: 0
@@ -312,9 +312,9 @@ Material:
     - _Float4: 0.587
     - _Folds_AO_multiply: 1.4
     - _Folds_tiling_shift: 1
-    - _GlossMapScale: 0
+    - _GlossMapScale: 1
     - _Glossiness: 0.5
-    - _GlossyReflections: 0
+    - _GlossyReflections: 1
     - _Holes_amount: 1
     - _Holes_tiling: 1
     - _Int0: 2
@@ -360,10 +360,10 @@ Material:
     m_Colors:
     - _1st_color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _2nd_Color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
-    - _BaseColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Base_Color: {r: 0.42745093, g: 0.2274509, b: 0.1372548, a: 0}
     - _Base_color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
-    - _Color: {r: 0.6691177, g: 0.6430707, b: 0.580558, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0.40000004, g: 0.2509804, b: 0.20392159, a: 0}
     - _Color1: {r: 0.18431333, g: 0.46274477, b: 0.40784273, a: 0}
     - _Color3: {r: 0.18431333, g: 0.46274477, b: 0.40784273, a: 0}
