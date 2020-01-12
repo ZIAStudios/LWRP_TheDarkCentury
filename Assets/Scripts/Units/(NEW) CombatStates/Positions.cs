@@ -8,7 +8,7 @@ public class Positions : MonoBehaviour
 
     [HideInInspector] public Transform[] positionsToAttack = new Transform[6];  //array con las posiciones que se van a usar
 
-    public bool[] emptyPositions = new bool[6];                                 //array que va variando constantemente
+    public bool[] positionToMove = new bool[6];                                 //array que va variando constantemente
 
     [HideInInspector] public int pos0, pos1, pos2, pos3, pos4, pos5;
     public int positionsInUse = 0;
@@ -30,12 +30,12 @@ public class Positions : MonoBehaviour
     {
         AttackPointMovable();
        
-            int add0 = (emptyPositions[0] == false) ? 1 : 0;
-            int add1 = (emptyPositions[1] == false) ? 1 : 0;
-            int add2 = (emptyPositions[2] == false) ? 1 : 0;
-            int add3 = (emptyPositions[3] == false) ? 1 : 0;
-            int add4 = (emptyPositions[4] == false) ? 1 : 0;
-            int add5 = (emptyPositions[5] == false) ? 1 : 0;
+            int add0 = (positionToMove[0] == false) ? 0 : 1;
+            int add1 = (positionToMove[1] == false) ? 0 : 1;
+            int add2 = (positionToMove[2] == false) ? 0 : 1;
+            int add3 = (positionToMove[3] == false) ? 0 : 1;
+            int add4 = (positionToMove[4] == false) ? 0 : 1;
+            int add5 = (positionToMove[5] == false) ? 0 : 1;
 
             positionsInUse = add0 + add1 + add2 + add3 + add4 + add5;
 
@@ -50,15 +50,17 @@ public class Positions : MonoBehaviour
 
         for (int i = 0; i < positionsToAttack.Length; i++)
         {
-            if (positionsToAttack[i] && emptyPositions[i])
+            if (positionsToAttack[i]/* && positionToMove[i*/)
             {
                 float distance = Vector3.SqrMagnitude(positionsToAttack[i].position - originalPosition);
-
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    bestPoint = positionsToAttack[i];
-                }
+				if (!positionsToAttack[i].GetComponent<TriggerAttackPoint>().movingToPoint)
+				{
+					if (distance < closestDistance)
+					{
+						closestDistance = distance;
+						bestPoint = positionsToAttack[i];
+					}
+				}
 
             }
 
@@ -82,5 +84,13 @@ public class Positions : MonoBehaviour
 
     }
     #endregion
+
+    public void Restart()
+    {
+        for (int i = 0; i < positionsToAttack.Length; i++)
+        {
+            positionsToAttack[i].GetComponent<TriggerAttackPoint>().movingToPoint = false;
+        }
+    }
 
 }
