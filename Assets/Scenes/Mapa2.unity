@@ -21971,11 +21971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945f26406bab53e47a070064a61578cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObjectPoolTag: 
+  playerObjectPoolTag: B_Arqueros1
   aiObjectPoolTag: 
-  cooldownToSpawn: 60
-  currentTime: 60
-  defaultArea: 0
+  cooldownToSpawn: 15
+  currentTime: 15
+  defaultArea: 1
   moveRallyPoint: 0
   buildingState: 0
   maxTroops: 5
