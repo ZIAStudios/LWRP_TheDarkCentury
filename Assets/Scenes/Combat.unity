@@ -637,6 +637,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2233048802347412362, guid: 876dc5ad171d6424a8206c508f17ea74,
+        type: 3}
+      propertyPath: alertRadius
+      value: 39.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233048802347412362, guid: 876dc5ad171d6424a8206c508f17ea74,
+        type: 3}
+      propertyPath: distanceToCombat
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233048802347412362, guid: 876dc5ad171d6424a8206c508f17ea74,
+        type: 3}
+      propertyPath: distancePlus
+      value: 22.2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2233048802347412358, guid: 876dc5ad171d6424a8206c508f17ea74, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 876dc5ad171d6424a8206c508f17ea74, type: 3}
@@ -795,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 8939513379880674699, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.164751
+      value: 5.42
       objectReference: {fileID: 0}
     - target: {fileID: 8939513379880674699, guid: ec56352be2593674798a6da72b5be637,
         type: 3}
@@ -960,12 +975,12 @@ PrefabInstance:
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockradius
-      value: 4
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockStrength
-      value: 5
+      value: 8.18
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
@@ -1185,12 +1200,12 @@ PrefabInstance:
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockradius
-      value: 4
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockStrength
-      value: 5
+      value: 8.18
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
@@ -1537,12 +1552,12 @@ PrefabInstance:
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockradius
-      value: 4
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockStrength
-      value: 5
+      value: 8.18
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
@@ -1825,12 +1840,12 @@ PrefabInstance:
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockradius
-      value: 4
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
       propertyPath: flockStrength
-      value: 5
+      value: 8.18
       objectReference: {fileID: 0}
     - target: {fileID: 1404874515238576967, guid: d60fcc58ffbccbd47963f59fd92a5b5d,
         type: 3}
