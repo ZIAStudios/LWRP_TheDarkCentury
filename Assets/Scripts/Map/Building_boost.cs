@@ -29,6 +29,7 @@ public class Building_boost : MonoBehaviour
     void Start()
     {
         particle= gameObject.transform.GetChild(1).gameObject;
+        particle.SetActive(false);
         spawnPoint = gameObject.transform.GetChild(0).gameObject.transform.position; //punto donde se envian las unidades al seleccionar el edificio
 
     }
@@ -55,6 +56,7 @@ public class Building_boost : MonoBehaviour
                 if (inside.tag == "P_Aldeano")
                 {
 					print("llega2");
+                    particle.SetActive(true);
 
 					villagersWorking++;
 					FindObjectOfType<AudioManager>().Play("CampesinoTrabajando");
@@ -90,6 +92,7 @@ public class Building_boost : MonoBehaviour
             if (outside.tag == "P_Aldeano")
             {
                 villagersWorking--;
+                particle.SetActive(false);
 
 				FindObjectOfType<AudioManager>().Stop("CampesinoTrabajando");
 
