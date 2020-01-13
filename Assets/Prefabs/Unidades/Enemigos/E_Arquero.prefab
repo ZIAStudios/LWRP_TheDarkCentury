@@ -97,6 +97,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 4
 --- !u!1 &944423297
 GameObject:
@@ -146,6 +147,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 0
 --- !u!1 &1419046907
 GameObject:
@@ -195,6 +197,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 1
 --- !u!1 &1430774456
 GameObject:
@@ -244,6 +247,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 3
 --- !u!1 &1507202225
 GameObject:
@@ -293,6 +297,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 5
 --- !u!1 &1786081822
 GameObject:
@@ -342,6 +347,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 1024
+  movingToPoint: 0
   index: 2
 --- !u!1 &6506501563925508956
 GameObject:
@@ -520,6 +526,11 @@ MonoBehaviour:
   buildingTag: 
   knockbackPoint: {x: 0, y: 0, z: 0}
   alreadySpawns: 1
+  floacklayer:
+    serializedVersion: 2
+    m_Bits: 0
+  flockradius: 1
+  flockStrength: 1
 --- !u!114 &6506501564573796559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,25 +543,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fbb7f87c7c729429df7cc4ab52a9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
-  alert: 0
-  combat: 0
-  death: 0
-  ignoreStates: 0
   toChaseMask:
     serializedVersion: 2
     m_Bits: 1024
-  alertRadius: 30
-  distanceToCombat: 15
-  distancePlus: 20
+  alertRadius: 42
+  distanceToCombat: 30
+  distancePlus: 36
   enemyToChase: {fileID: 0}
-  proyectilePoolTag: E_Arrow
-  spawnProyectile: {fileID: 6506501563925508959}
-  attackSpeed: 1
-  proyectileHeight: 2
-  gravity: -100
   state: 0
-  obj: {fileID: 0}
+  ignoreStates: 0
 --- !u!114 &313594627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +572,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  emptyPositions: 000000000000
+  positionToMove: 000000000000
   pos0: 0
   pos1: 0
   pos2: 0
@@ -827,21 +828,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
-        type: 3}
+    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
-        type: 3}
+    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
+        type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2315090, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 8811669051047596953, guid: 904f0ca6287137941aea55c21ebcd0f9,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}

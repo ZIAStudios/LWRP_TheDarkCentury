@@ -125,6 +125,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 4
 --- !u!1 &1404874515054492481
 GameObject:
@@ -174,6 +175,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 0
 --- !u!1 &1404874515238576964
 GameObject:
@@ -311,7 +313,7 @@ MonoBehaviour:
   acceleration: 12
   maxHealth: 110
   armor: 10
-  damage: 30
+  damage: 50
   currentHealth: 0
   startSpeed: 0
   startRotationSpeed: 0
@@ -322,6 +324,11 @@ MonoBehaviour:
   buildingTag: 
   knockbackPoint: {x: 0, y: 0, z: 0}
   alreadySpawns: 1
+  floacklayer:
+    serializedVersion: 2
+    m_Bits: 0
+  flockradius: 1
+  flockStrength: 1
 --- !u!114 &1404874515238576966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +349,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  emptyPositions: 000000000000
+  positionToMove: 000000000000
   pos0: 0
   pos1: 0
   pos2: 0
@@ -365,11 +372,12 @@ MonoBehaviour:
   maskToChase:
     serializedVersion: 2
     m_Bits: 2048
-  bestTarget: {fileID: 0}
+  currentTarget: {fileID: 0}
   onAttackPoint: 0
   alertRadius: 15
   knockbackForce: 0
   ignoreStates: 0
+  hardMoving: 0
   state: 0
 --- !u!1 &1404874515354290086
 GameObject:
@@ -2440,6 +2448,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 1
 --- !u!1 &1404874515832245476
 GameObject:
@@ -2489,6 +2498,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 3
 --- !u!1 &1404874515929686006
 GameObject:
@@ -2538,6 +2548,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 2
 --- !u!1 &1404874516449751033
 GameObject:
@@ -2636,6 +2647,7 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 2048
+  movingToPoint: 0
   index: 5
 --- !u!1 &1404874516789503811
 GameObject:
