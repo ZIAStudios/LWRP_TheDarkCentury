@@ -21,6 +21,9 @@ public class FlyCamera : MonoBehaviour
     private Vector3 lastMouse = new Vector3(255, 255, 255); //kind of in the middle of the screen, rather than at the top (play)
     private float totalRun = 1.0f;
 
+    [SerializeField]
+    bool mouseVisibility = true;
+
     public Camera cam1;
     public Camera cam2;
 
@@ -37,14 +40,8 @@ public class FlyCamera : MonoBehaviour
             cam1.enabled = !cam1.enabled;
             cam2.enabled = !cam2.enabled;
         }
-        if (cam2.enabled)
-        {
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.visible = true;
-        }
+
+        CursorVisible();
 
         lastMouse = Input.mousePosition - lastMouse;
         lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0);
@@ -84,6 +81,25 @@ public class FlyCamera : MonoBehaviour
             transform.Translate(p);
         }
 
+    }
+
+    void CursorVisible()
+    {
+        if (mouseVisibility)
+        {
+            print("Prueba");
+            return;
+        }
+       
+        if (cam2.enabled)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
+        
     }
 
     private Vector3 GetBaseInput()
