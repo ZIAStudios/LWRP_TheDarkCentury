@@ -86,8 +86,7 @@ public class FlyCamera : MonoBehaviour
     void CursorVisible()
     {
         if (mouseVisibility)
-        {
-            print("Prueba");
+        {          
             return;
         }
        
