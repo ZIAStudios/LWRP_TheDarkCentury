@@ -78,6 +78,34 @@ public class Building : MonoBehaviour
 		//UIItems();
         UpgradeSlot();
 
+        if (spawnDirectly) //Spawn de unidades inicial, sin tener ue esperar X tiempo a cada reaparición de unidades
+        {
+            #region Spawn when game starts
+            GameObject directSpawnObject = objectPooler.GetPooledObject(playerObjectPoolTag);
+            if (directSpawnObject != null)
+            {
+                //listas a añadir el GameObject creado
+                playerList.Add(directSpawnObject);
+                objectPooler.activePooledObjects.Add(directSpawnObject);
+                //sitio en el que aparecer
+                directSpawnObject.transform.position = spawnPoint.position;
+                directSpawnObject.transform.rotation = spawnPoint.rotation;
+
+                //que se vea el objecto
+                directSpawnObject.SetActive(true);
+                //Donde se mueve al aparecer
+                directSpawnObject.GetComponent<Unit_Base>().MoveAt(GetRandomPosition());
+                
+            }
+            #endregion
+
+            instantUnits++;
+            print("spawns");
+        }
+        if (instantUnits >= startUnits)
+            spawnDirectly = false;
+
+
 
         //timer resetea cada vez que cambia de dueño la zona
         if (lastBuildingState != buildingState)
@@ -105,42 +133,11 @@ public class Building : MonoBehaviour
         PlayerSpawn();
         AISpawn();
 
-        if (spawnDirectly) //Spawn de unidades inicial, sin tener ue esperar X tiempo a cada reaparición de unidades
-        {
-            #region Spawn when game starts
-            GameObject directSpawnObject = objectPooler.GetPooledObject(playerObjectPoolTag);
-            directSpawnObject.GetComponent<Unit_Base>().buildingTag = gameObject.tag;
-
-            if (directSpawnObject != null)
-            {
-                //listas a añadir el GameObject creado
-                playerList.Add(directSpawnObject);
-                objectPooler.activePooledObjects.Add(directSpawnObject);
-                //sitio en el que aparecer
-                directSpawnObject.transform.position = spawnPoint.position;
-                directSpawnObject.transform.rotation = spawnPoint.rotation;
-
-                //que se vea el objecto
-                directSpawnObject.SetActive(true);
-                //Donde se mueve al aparecer
-                directSpawnObject.GetComponent<Unit_Base>().MoveAt(GetRandomPosition());
-
-            }
-            #endregion
-
-            instantUnits++;
-            print("spawns");
-        }
-        if (instantUnits >= startUnits)
-            spawnDirectly = false;
-
-;
-
         //timer dueño (realción con la primera condición)
         lastBuildingState = buildingState;
     }
 
-    #region PlayerSpawn() - Spawn units depending on the zone state
+    #region PlayerSpawn() & AISpawn() - Spawn units depending on the zone state
     void PlayerSpawn()
     {
         if (buildingState == Zone.STATE.Player)
@@ -150,7 +147,7 @@ public class Building : MonoBehaviour
                 if (currentTime <= 0)
                 {
                     GameObject PlayerObject = objectPooler.GetPooledObject(playerObjectPoolTag);
-					PlayerObject.GetComponent<Unit_Base>().buildingTag = gameObject.tag;
+					PlayerObject.GetComponent<Unit_Base>().buildingTag = gameObject.tag.ToString();
 
 					if (PlayerObject != null)
                     {
@@ -257,10 +254,9 @@ public class Building : MonoBehaviour
             }
         }
     }
-	#endregion
+    
 
-	#region AISpawn()
-	void AISpawn()
+    void AISpawn()
     {
         if (buildingState == Zone.STATE.AI)
         {

@@ -23,7 +23,7 @@ Material:
   m_Name: House_01_wood
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 6
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2050
@@ -303,7 +303,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -317,7 +317,7 @@ Material:
     m_Colors:
     - _1st_color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _2nd_Color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
-    - _BaseColor: {r: 0.54901963, g: 0.24825908, b: 0.070588216, a: 1}
+    - _BaseColor: {r: 0.745283, g: 0.42087427, b: 0.16522783, a: 1}
     - _Base_Color: {r: 0.42745093, g: 0.2274509, b: 0.1372548, a: 0}
     - _Base_color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -334,7 +334,7 @@ Material:
     - _Material_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Moss_color: {r: 0, g: 0.5588235, b: 0.0038539239, a: 0}
     - _Paint_color: {r: 0.13725471, g: 0.34339407, b: 0.42745084, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Vector0: {r: 4, g: 3, b: 0, a: 0}
     - _Wood_Color: {r: 0.42745087, g: 0.22745088, b: 0.13725477, a: 0}
     - _Wood_base_color: {r: 0.36764702, g: 0.15973613, b: 0, a: 0}
