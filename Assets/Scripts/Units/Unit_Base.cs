@@ -44,11 +44,9 @@ public class Unit_Base : MonoBehaviour
     float startTime = 0.1f;
 
 	Vector3 lastPos;
-    [SerializeField] LayerMask floacklayer ;
-    [SerializeField] float flockradius = 1;
-    [SerializeField] float flockStrength = 1;
-    
-    private void Awake()
+
+
+	private void Awake()
     {
 		anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();   
@@ -74,15 +72,8 @@ public class Unit_Base : MonoBehaviour
 
     void Update()
     {
-
-
-        if (Input.GetKey(KeyCode.Y))
-        {
-            ResetStats();
-        }
-
-        //if (buildingTag != "")
-        //    building = GameObject.FindWithTag(buildingTag).GetComponent<Building>(); //GRAN GUARRADA Coge el edifio con el tag que se le haya puesto
+        if (buildingTag != "")
+            building = GameObject.FindWithTag(buildingTag).GetComponent<Building>(); //GRAN GUARRADA Coge el edifio con el tag que se le haya puesto
 
         agent.speed = speed;
         agent.angularSpeed = rotationSpeed;
@@ -107,7 +98,6 @@ public class Unit_Base : MonoBehaviour
 		{
 			Animations();
 		}
-        Flock();
     }
 
 
@@ -119,7 +109,6 @@ public class Unit_Base : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            //H
 			if (Physics.Raycast(ray, out hit, 400, LayerMask.NameToLayer("Enemy")))
 			{
 				print("Hit Enemy");
@@ -144,27 +133,33 @@ public class Unit_Base : MonoBehaviour
 
 				#region If this.gameobject have STATE_MELEE and hit enemy
 				//Si el enemigo tiene States_Melee
-				if (gameObject.GetComponent<Combat_Melee>() != null )
+				if (gameObject.GetComponent<States_Melee>() != null)
 				{
-                    Combat_Melee myMelee = GetComponent<Combat_Melee>();
-                    //if (!myMelee.clickOnEnemy)
-                    myMelee.SetEnemy(hit.collider.transform.parent.gameObject);
+					if (hit.collider.gameObject.GetComponentInParent<Positions>().positionsInUse < 6)
+					{			
+						//hardcodeas un ataque a un target , seteas cual es el best target y te mueves a él
+						
+						//MoveAt(hit.collider.gameObject.transform.position);
+						//gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						//
+						//if (Vector3.SqrMagnitude(this.gameObject.transform.position - hit.collider.gameObject.transform.position) <= 1)
+						//{
+						//	gameObject.GetComponent<States_Melee>().ignoreStates = false;
+						//}
 
-                    myMelee.clickOnEnemy = true;
-                    myMelee.state = Combat_Melee.State.clickEnemy;
 
+						gameObject.GetComponent<States_Melee>().SetEnemy(hit.collider.transform.parent.gameObject);
 
-                }
-                //else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
-                //gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
-                #endregion
-            }
+					}
+				}
+				//else -------------------------> PONER ESTO BIEN PARA EL ARQUERO
+				//gameObject.GetComponent<Unit_Range>().enemyToChase = hit.collider.gameObject;
+				#endregion
+			}
 			else if (Physics.Raycast(ray, out hit, 200, movementMask))
 			{
-                Combat_Melee myMelee = GetComponent<Combat_Melee>();
-
-                #region Sound - When click on ground with selected troops
-                float hitSound = Random.Range(0, 25);
+				#region Sound - When click on ground with selected troops
+				float hitSound = Random.Range(0, 25);
 				if (hitSound <= 2)
 				{
 					FindObjectOfType<AudioManager>().Play("Yes");
@@ -177,24 +172,32 @@ public class Unit_Base : MonoBehaviour
 					}
 					else { FindObjectOfType<AudioManager>().Play("MovAldeano"); }
 				}
-                #endregion
+				#endregion
 
-                #region If this.gameobject have COMBAT_MELEE and hit ground
-                if (gameObject.GetComponent<Combat_Melee>() != null)
-                { 
-                    gameObject.GetComponent<Combat_Melee>().clickOnEnemy = false;
-				
-                    if (!myMelee.ignoreStates)
-                    {
-                        //Cambio al estado de forceMove, cuando esta atacando o alerta y lo quieres sacar y moverlo a otro lado
-                        if (myMelee.state != Combat_Melee.State.normal && myMelee.state != Combat_Melee.State.forceMove)
-                        {
-                            myMelee.state = Combat_Melee.State.forceMove;
-                            gameObject.GetComponent<Combat_Melee>().ignoreStates = true;
-                        }
-                    }
+				#region If this.gameobject have STATE_MELEE and hit ground
+
+				if (gameObject.GetComponent<States_Melee>() != null)
+				{
+					if (gameObject.GetComponent<States_Melee>().state != States_Melee.State.normal)
+					{
+						gameObject.GetComponent<States_Melee>().ignoreStates = true;
+						gameObject.GetComponent<States_Melee>().state = States_Melee.State.normal;
+					}
+
+					if (gameObject.GetComponent<States_Melee>().bestTarget != null)
+					{
+						gameObject.GetComponent<States_Melee>().bestTarget = null;
+					}
 				}
 
+				//ESTO CAMBIARLO CUANDO SE QUEDE EL CÓDIGO NUEVO
+				if (gameObject.GetComponent<Unit_Melee>() != null)
+				{
+					if (gameObject.GetComponent<Unit_Melee>().enemyToChase != null)
+					{
+						gameObject.GetComponent<Unit_Melee>().enemyToChase = null;
+					}
+				}
 				#endregion
 
 				agent.SetDestination(hit.point);
@@ -251,30 +254,6 @@ public class Unit_Base : MonoBehaviour
     }
     #endregion
 
-    #region Flock() - Space between units
-    void Flock()
-    {
-        Collider[] colls = Physics.OverlapSphere(transform.position, flockradius, floacklayer);
-        Vector3 flockVector = Vector3.zero;
-        int totalcolls = 0;
-        for (int i = 0; i < colls.Length; i++)
-        {
-            if (colls[i].GetComponent<Unit_Base>() != null)
-            {
-                totalcolls++;
-                flockVector += (transform.position - colls[i].transform.position).normalized * Mathf.Lerp(1, 0, Vector3.Distance(transform.position, colls[i].transform.position) / flockradius);
-            }
-        }
-        if (totalcolls > 0)
-        {
-            flockVector /= totalcolls;
-            //Debug.Log(flockVector);
-        }
-        agent.Move(flockVector * flockStrength);
-    }
-    #endregion
-
-    #region Die()
     public void Die()
     {
         if (!alreadySpawns) //cuando muere si esta ya spawneado y no es clon de la base, no se remueve de la lista (porque no tiene)
@@ -328,15 +307,13 @@ public class Unit_Base : MonoBehaviour
 
     }
 
-	public void ResetStats()
+    public void ResetStats()
     {
-        Start();
-        gameObject.GetComponent<Positions>().Restart();
-    }
-    #endregion
 
-    #region Animations() - Objects animations
-    void Animations()
+        Start();
+    }
+
+	void Animations()
 	{
 		Vector3 curPos = transform.position;
 		//if (curPos.x  >= lastPos.x - 0.0001 || curPos.x <= lastPos.x + 0.0001 || curPos.z >= lastPos.z - 0.0001 || curPos.z <= lastPos.z + 0.0001)
@@ -354,13 +331,5 @@ public class Unit_Base : MonoBehaviour
 		}
 
 	}
-	#endregion
 
-
-
-	private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, flockradius);
-    }
 }
