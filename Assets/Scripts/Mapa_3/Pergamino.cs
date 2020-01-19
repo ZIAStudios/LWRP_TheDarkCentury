@@ -8,6 +8,10 @@ public class Pergamino : MonoBehaviour
     public GameObject botónPergamino;
     public PruebaCámara camaraSequencia;
 
+    public GameObject texto1;
+    public GameObject texto2;
+
+
     //public PruebaCámara scriptCámara;
     void Start()
     {
@@ -21,6 +25,12 @@ public class Pergamino : MonoBehaviour
     }
 
     public void Siguiente ()
+    {
+        texto1.SetActive(false);
+        texto2.SetActive(true);
+    }
+
+    public void SequenciaDos ()
     {
         canvasPergamino.SetActive(false);
 
