@@ -9,20 +9,20 @@ public class States_Melee : MonoBehaviour
 	Animator anim;
     Unit_Base unit;
 
-	[SerializeField] LayerMask maskToChase;
+	[SerializeField] public LayerMask maskToChase;
 
-	public GameObject bestTarget;
+	public GameObject currentTarget;
     Transform toMovePoint;
 
     [HideInInspector] public bool onAttackPoint = false;
 
-	[SerializeField] float alertRadius = 5f;
+	[SerializeField] public float alertRadius = 5f;
 	[SerializeField] float knockbackForce = 10f;
 
 	Vector3 lastPos;
 
 	public bool ignoreStates = false;
-	bool hardMoving = false;
+	public bool hardMoving = false;
 
 	public enum State
     {
@@ -51,17 +51,12 @@ public class States_Melee : MonoBehaviour
 			ignoreStates = false;
 		}
 
-		if (bestTarget == null && state == State.alert && toMovePoint!= null)
+		if (currentTarget == null && state == State.alert && toMovePoint!= null)
 		{
 			MoveTo(toMovePoint.position);
-			hardMoving = true;
-		}
-		if (hardMoving == true && distance <= 10f)
-		{
-			hardMoving = false;
 		}
 
-		print(distance);
+		//print(distance);
 
 		Animations();
 
@@ -110,9 +105,9 @@ public class States_Melee : MonoBehaviour
 
     void FaceTarget() //Face the target
     {
-        if (bestTarget != null)
+        if (currentTarget != null)
         {
-            Vector3 direction = (bestTarget.transform.position - transform.position).normalized;
+            Vector3 direction = (currentTarget.transform.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
@@ -140,41 +135,55 @@ public class States_Melee : MonoBehaviour
 		}
 	}
 
-	void AlertState()
+    public void AttackEnemy(GameObject t)
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
+        currentTarget = t;
+        SetEnemy(t);
+    }
+    
+    public void CheckEnemyAtPosition(Vector3 positiontocheck)
+    {
+        Collider[] colliders = Physics.OverlapSphere(positiontocheck, alertRadius, maskToChase); //Array de colldiers para detectar enemigos
         int lowestValue = 20;                   //Valor que nunca se puede superar (el maximo valos es el máximo de tropas atacando)
 
-		//if (bestTarget == null /*&& Vector3.Dis*/) //PONER QUE SE MUEVA, SI PASA DE ESA DISTANCIA NO HACE CASO AL RESTO
-		if (!hardMoving)
-		{
-			foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
-			{
-				int value = item.gameObject.GetComponent<Positions>().positionsInUse;
-				if (value < lowestValue)
-				{
-					lowestValue = value;
-					bestTarget = item.gameObject;
-				}
-			}
-		}
+        foreach (Collider item in colliders)    //Determina cual es el target con menos unidades atacandole
+        {
+            int value = item.gameObject.GetComponent<Positions>().positionsInUse;
+            if (value < lowestValue)
+            {
+                lowestValue = value;
+                currentTarget = item.gameObject;
+            }
+        }
 
         if (colliders.Length != (uint)0)
         {
-			//if (state != State.combat)
-            SetEnemy(bestTarget);
+            //if (state != State.combat)
+            SetEnemy(currentTarget);
         }
         else
         {
             if (state != State.normal)
             {
-				if (bestTarget.layer != 0)	//CUANDO HARDCODEA ATAQUE COGE DE TARGET AL SELECTOR DEL TARGET, QUE TIENE LAYER 0 (Default) ?!?!?!CUIDAO?!?!!?
-                MoveTo(transform.position);     //que cuando pase de estado de alerta a normal, se quede quieto, no busque la última posición
+                if (currentTarget.layer != 0)   //CUANDO HARDCODEA ATAQUE COGE DE TARGET AL SELECTOR DEL TARGET, QUE TIENE LAYER 0 (Default) ?!?!?!CUIDAO?!?!!?
+                    MoveTo(transform.position);     //que cuando pase de estado de alerta a normal, se quede quieto, no busque la última posición
             }
-            bestTarget = null;
+            currentTarget = null;
             toMovePoint = null;
             state = State.normal;
         }
+    }
+
+	void AlertState()
+    {
+		//if (bestTarget == null /*&& Vector3.Dis*/) //PONER QUE SE MUEVA, SI PASA DE ESA DISTANCIA NO HACE CASO AL RESTO
+		if (!hardMoving && currentTarget == null)
+        {
+
+        }
+        CheckEnemyAtPosition(transform.position);
+
+
     }
     #endregion
 
@@ -182,7 +191,7 @@ public class States_Melee : MonoBehaviour
 
     public void CombatState()
     {
-        if (bestTarget != null)
+        if (currentTarget != null)
         {
 			if (toMovePoint != null)
 			{
@@ -209,7 +218,7 @@ public class States_Melee : MonoBehaviour
 	//Función para activar en la animación para hacer daño, ya que TakeDamage es de uno mismo y no se puede hacer por animación
 	void HitEnemy()
 	{		
-		var enemy = bestTarget.GetComponent<Unit_Base>();
+		var enemy = currentTarget.GetComponent<Unit_Base>();
 
         enemy.anim.SetBool("TakeDamage", true);
 		enemy.TakeDamage(unit.damage);
@@ -224,7 +233,7 @@ public class States_Melee : MonoBehaviour
 			FindObjectOfType<AudioManager>().Play("combate1");
 		}
 
-		bestTarget.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
+		currentTarget.GetComponent<Rigidbody>().AddExplosionForce(knockbackForce * 10, gameObject.transform.position, alertRadius, 3f, ForceMode.Impulse);
 	
 	}
 	void Animations()
