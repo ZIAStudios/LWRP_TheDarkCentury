@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pergamino : MonoBehaviour
 {
     public GameObject canvasPergamino;
-    public GameObject botónPergamino;
+    //public GameObject botónPergamino;
     public PruebaCámara camaraSequencia;
 
     public GameObject texto1;
