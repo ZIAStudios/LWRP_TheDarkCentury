@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Shed
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7f1158dee0c80674fa31d8fbc51155bf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Curvature:
@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 680780ef350cbaf409b1851a07c5a09f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Material_pattern:
@@ -89,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2365b5ad6a2357c42b9d8efadc9d73bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Smoothness_map_input:
@@ -101,7 +101,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d751258cf9404c949afe780a050af5af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Paint_mask:
@@ -219,7 +219,7 @@ Material:
     - _Alpha_cutout_level: 1
     - _Alpha_cutout_mask_map_input_level: 1
     - _Blend: 0
-    - _BumpScale: 1
+    - _BumpScale: 0.15
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormal_map_inputMapScale: 1
@@ -255,7 +255,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _Smoothness_Shift: 0
     - _SpecularHighlights: 1
@@ -269,10 +269,10 @@ Material:
     - __dirty: 0
     - _normal_intensity: 0.511
     m_Colors:
-    - _BaseColor: {r: 0.9528302, g: 0.800142, b: 0.36405307, a: 1}
+    - _BaseColor: {r: 0.77931035, g: 1, b: 0, a: 1}
     - _Base_Color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _Base_color: {r: 0.625, g: 0.472973, b: 0.40441176, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.77931035, g: 1, b: 0, a: 1}
     - _Color0: {r: 0.051482532, g: 0.08088237, b: 0.047577865, a: 0}
     - _Color1: {r: 0.7279412, g: 0.3110961, b: 0.1231073, a: 0}
     - _Color3: {r: 0.18431373, g: 0.46274513, b: 0.40784317, a: 0}
@@ -283,7 +283,7 @@ Material:
     - _Grunge_color: {r: 0.07352937, g: 0.053461656, b: 0.010272494, a: 0}
     - _Material_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Paint_color: {r: 0.18431342, g: 0.46274477, b: 0.40784287, a: 0}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Wood_Color: {r: 0.47058803, g: 0.36262962, b: 0.20069191, a: 0}
     - _Wood_base: {r: 0.7279412, g: 0.31109607, b: 0.12310725, a: 0}
     - _Wood_tiling: {r: 3, g: 4, b: 0, a: 0}

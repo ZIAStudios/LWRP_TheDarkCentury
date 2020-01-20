@@ -22,8 +22,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: House_01_steel
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
-  m_LightmapFlags: 0
+  m_ShaderKeywords: 
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2050
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f8a94a92011c8304bb788b75f770a8e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -86,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f8a94a92011c8304bb788b75f770a8e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -149,7 +149,7 @@ Material:
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0
     - _DetailNormal_map_inputMapScale: 1
     - _Detail_2_level: 0
     - _Detail_Smoothness_shift: 0.658
@@ -157,12 +157,12 @@ Material:
     - _DstBlend: 0
     - _Edge_wear: 0
     - _Emmisive_intensity: 0
-    - _EnvironmentReflections: 0
+    - _EnvironmentReflections: 1
     - _Float2: 0
     - _Float3: 1
-    - _GlossMapScale: 0
+    - _GlossMapScale: 1
     - _Glossiness: 0.5
-    - _GlossyReflections: 0
+    - _GlossyReflections: 1
     - _Material_Smoothness_shift: 1
     - _Metal_object: 1
     - _Metallic: 0
@@ -185,9 +185,9 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _BaseColor: {r: 0.3584906, g: 0.3094518, b: 0.3094518, a: 1}
     - _Base_color: {r: 0.3892733, g: 0.421847, b: 0.4411764, a: 0}
-    - _Color: {r: 0.6691177, g: 0.6430707, b: 0.580558, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 0.33333325, g: 0.33333325, b: 0.3803921, a: 0}
     - _Color3: {r: 1, g: 1, b: 1, a: 0}
     - _Detail_2_color: {r: 0, g: 0.9779412, b: 0.7756083, a: 0}
