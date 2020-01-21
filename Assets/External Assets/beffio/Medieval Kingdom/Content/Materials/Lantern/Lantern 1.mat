@@ -200,7 +200,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -212,7 +212,7 @@ Material:
     m_Colors:
     - _1st_color: {r: 0.47843128, g: 0.45882356, b: 0.44705886, a: 0}
     - _2nd_Color: {r: 0.6397059, g: 0.60898477, b: 0.5503352, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.8679245, g: 0.6337704, b: 0.48718405, a: 1}
     - _Base_color: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 0.4784314, g: 0.45882356, b: 0.44705886, a: 0}
@@ -225,7 +225,7 @@ Material:
     - _Emmsivie_color: {r: 0.9779412, g: 0.9210103, b: 0.68312067, a: 0}
     - _Material_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Moss_color: {r: 0.2726879, g: 0.28676438, b: 0.240376, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
 --- !u!114 &2092070289356065375
 MonoBehaviour:
   m_ObjectHideFlags: 11
