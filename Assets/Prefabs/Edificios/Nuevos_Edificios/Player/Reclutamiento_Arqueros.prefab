@@ -802,7 +802,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2814181850233836026}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.4180717, y: 1, z: 6.3952694}
@@ -4189,6 +4189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3419540352629390244}
   - component: {fileID: 5174886960151209894}
+  - component: {fileID: 3466862952846206900}
   m_Layer: 12
   m_Name: Reclutamiento_Arqueros
   m_TagString: Untagged
@@ -4226,6 +4227,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.719719, y: 14.699999, z: 20.6}
   m_Center: {x: -35.249874, y: 7.8, z: -15.2}
+--- !u!114 &3466862952846206900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419540352629390245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945f26406bab53e47a070064a61578cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObjectPoolTag: P_Arquero
+  aiObjectPoolTag: 
+  cooldownToSpawn: 60
+  currentTime: 60
+  defaultArea: 0
+  moveRallyPoint: 0
+  buildingState: 0
+  maxTroops: 5
+  enemyMaxTroops: 5
+  troopsToAddIfUpgrade: 1
+  enemyList: []
+  playerList: []
+  buildingSlider: {fileID: 0}
+  playerCount: {fileID: 0}
+  enemyCount: {fileID: 0}
+  activeArmor: 0
+  armorPlus: 30
+  activeDamage: 0
+  damagePlus: 30
+  activeSlot: 0
+  spawnDirectly: 0
+  startUnits: 0
+  baseActive: 0
 --- !u!1 &3442943732905245834
 GameObject:
   m_ObjectHideFlags: 0
@@ -8157,19 +8193,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
@@ -8290,19 +8326,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 13774246, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
+    - target: {fileID: 13769598, guid: 904f0ca6287137941aea55c21ebcd0f9, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bbdb2b9e23cee64da709ef24348323e, type: 2}
