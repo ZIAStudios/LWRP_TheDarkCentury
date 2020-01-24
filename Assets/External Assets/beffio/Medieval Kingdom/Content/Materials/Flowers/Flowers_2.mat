@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Flowers_2
   m_Shader: {fileID: 4800000, guid: 0f7c21dda7fbbfc49b71ea6f47716bfc, type: 3}
   m_ShaderKeywords: _NORMALMAP
@@ -26,12 +27,20 @@ Material:
         m_Texture: {fileID: 2800000, guid: 3f2a03fdf5c393840b0245053bd7c5d2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Ambient_Occlusion_map_input:
-        m_Texture: {fileID: 2800000, guid: b68fc094338cd5c4e8bfee8bac999009, type: 3}
+    - _Albedo_map_input:
+        m_Texture: {fileID: 2800000, guid: 465919637b607124c9dc3bc7eb4e541f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Alpha_cutout_mask_map_input:
+        m_Texture: {fileID: 2800000, guid: a046e8f7a2fb8344cba3319931c1e48e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ambien_Occulsion:
         m_Texture: {fileID: 2800000, guid: 42d821d6761c37f4f94200e650569a66, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ambient_Occlusion_map_input:
+        m_Texture: {fileID: 2800000, guid: b68fc094338cd5c4e8bfee8bac999009, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BPR_AO:
@@ -52,10 +61,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BPR_normal:
         m_Texture: {fileID: 2800000, guid: c3588f6a2756d2a4eae4cefbcba88fe8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Albedo_map_input:
-        m_Texture: {fileID: 2800000, guid: 465919637b607124c9dc3bc7eb4e541f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Hill_roughness:
@@ -108,10 +113,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Shape_Alpha:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Alpha_cutout_mask_map_input:
-        m_Texture: {fileID: 2800000, guid: a046e8f7a2fb8344cba3319931c1e48e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
