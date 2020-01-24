@@ -1,19 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8575664681707098345
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Wheel_wood
-  m_Shader: {fileID: 4800000, guid: ca8c7b0a6e455b34a956d170adcc5914, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -22,11 +37,19 @@ Material:
         m_Texture: {fileID: 2800000, guid: f77bc66b9c4f5434ea97a481b8e34fc4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Albedo_smoothness_map_input:
+        m_Texture: {fileID: 2800000, guid: 3320889b6ffef344396a6dc6a830a0d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Alpha_cutout_mask_map_input:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ambient_Occlusion_map_input:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -46,12 +69,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Detail_mask_2_map_input:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _Detail_mask_1_map_input:
         m_Texture: {fileID: 2800000, guid: 0f8dc076c749f13478e921de7fac9e25, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Detail_mask_2_map_input:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Edge_mask_map_input:
@@ -68,10 +91,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Albedo_smoothness_map_input:
-        m_Texture: {fileID: 2800000, guid: 3320889b6ffef344396a6dc6a830a0d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Material_pattern:
@@ -165,8 +184,12 @@ Material:
     m_Floats:
     - _AO_Intensity: 0
     - _AO_shift: 0
+    - _AlphaClip: 0
+    - _Alpha_cutout_level: 1
     - _Alpha_cutout_mask_map_input_level: 1
+    - _Blend: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0
     - _DetailNormal_map_inputMapScale: 1
     - _Detail_2_level: 0
@@ -188,22 +211,28 @@ Material:
     - _Material_Smoothness_shift: 0.209
     - _Metal_object: 0
     - _Metallic: 0
+    - _Metalobjectusesmettalicsmoothnesmap: 0
     - _Mettallic_shift: 0
     - _Mode: 0
+    - _Normal_intensity: 1
     - _Normal_map_input_intensity: 1
     - _OcclusionStrength: 1
     - _Paint_Smoothness: 0.577
     - _Paint_level: 0
     - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _SampleGI: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _Tiling: 1
     - _UVSec: 0
     - _Wood_Smoothness: 0.6
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Base_Color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _Base_color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -10,7 +10,7 @@ Material:
   m_Name: Fire
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 0
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2050
@@ -217,7 +217,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _2nd_color: {r: 0.9632353, g: 0.3786511, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0.35246688, b: 0, a: 1}
     - _Base_Color: {r: 0.6691177, g: 0.3622391, b: 0.08363971, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0.35294116, b: 0, a: 0}
