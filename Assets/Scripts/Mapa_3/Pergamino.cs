@@ -26,8 +26,8 @@ public class Pergamino : MonoBehaviour
 
     public void Siguiente ()
     {
-        texto1.SetActive(false);
         texto2.SetActive(true);
+        texto1.SetActive(false);
     }
 
     public void SequenciaDos ()

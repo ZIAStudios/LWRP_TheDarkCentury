@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 092842c450b945a4e965c8ec365ac089
   - enabled: 1
-    path: "Assets/Scenes/Dise\xF1o 1.unity"
+    path: "Assets/Scenes/Dise\xF1o_1.unity"
     guid: f2cbb38336e0b8546b42b2d05e4544cd
   m_configObjects: {}
