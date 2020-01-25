@@ -228,7 +228,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _2nd_color: {r: 1, g: 1, b: 1, a: 0}
-    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.6415094, g: 0.3177287, b: 0.3177287, a: 1}
     - _Base_Color: {r: 0.35294116, g: 0.54509807, b: 0.22352937, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 1, g: 0.7098039, b: 0.26666668, a: 0}

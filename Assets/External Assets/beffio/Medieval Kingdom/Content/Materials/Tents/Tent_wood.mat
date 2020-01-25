@@ -274,7 +274,7 @@ Material:
     - __dirty: 0
     - _normal_intensity: 0.511
     m_Colors:
-    - _BaseColor: {r: 0.77931035, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 0.5566038, g: 0.34817016, b: 0.18115878, a: 1}
     - _Base_Color: {r: 0.42745098, g: 0.22745097, b: 0.13725486, a: 0}
     - _Base_color: {r: 0.72794116, g: 0.49789405, b: 0.28903547, a: 0}
     - _Color: {r: 0.77931035, g: 1, b: 0, a: 1}
