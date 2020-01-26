@@ -25,7 +25,8 @@ public class TextoFinal : MonoBehaviour
             
             pergamino.texto5.SetActive(true);
             Time.timeScale = 0f;
-
+            FindObjectOfType<AudioManager>().Stop("AudioCinematica");
+            FindObjectOfType<AudioManager>().Play("Mapa1Texto5");
             Destroy(gameObject);
         }
     }

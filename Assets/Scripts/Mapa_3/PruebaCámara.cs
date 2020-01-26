@@ -115,5 +115,12 @@ public class PruebaCámara : MonoBehaviour
     void Mapa1Texto1()
     {
         canvasTexto.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Mapa1Texto1");
+    }
+
+    void AcabarCinematica2Mapa1()
+    {
+        cameraNormal.SetActive(true);
+        cameraSequencia.SetActive(false);
     }
 }

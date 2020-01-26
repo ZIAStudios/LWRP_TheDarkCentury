@@ -23,7 +23,9 @@ public class CanvasEnemigos : MonoBehaviour
         {
             panel_enemigos.SetActive(true);
             pergamino.texto3.SetActive(true);
-            
+            FindObjectOfType<AudioManager>().Stop("Mapa1Texto2");
+            FindObjectOfType<AudioManager>().Play("Mapa1Texto3");
+
 
             Destroy(gameObject);
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pergamino : MonoBehaviour
 {
@@ -92,6 +93,8 @@ public class Pergamino : MonoBehaviour
         camaraSequencia.cameraSequencia.SetActive(false);
         texto2.SetActive(true);
         texto1.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Mapa1Texto2");
+        FindObjectOfType<AudioManager>().Stop("Mapa1Texto1");
     }
     public void DesactivaTexto2()
     {
@@ -102,5 +105,9 @@ public class Pergamino : MonoBehaviour
     {
         texto3.SetActive(false);
         canvasPergamino.SetActive(false);
+    }
+    public void PasardeNivel()
+    {
+        SceneManager.LoadScene("Mapa_2");
     }
 }
