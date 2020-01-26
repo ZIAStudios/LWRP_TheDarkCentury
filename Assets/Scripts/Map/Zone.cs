@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Zone : MonoBehaviour
 {
-    /*
-     * NOTA MUY IMPORTANTE POR LA MAESTRA DEL MULTIVERSO
-     * 
-     * CAMBIAR ESTA MIERDA DE UN SOLO ARRAY, PORQUE DETECTA TODO MUY RÁPIDO Y ESTÁ MAL HECHO. (hay que poner un array para cada uno)
-     * 
-     * */
+    
     [SerializeField] float height = 100f;
 
     public LayerMask flagLayer;
@@ -22,12 +17,13 @@ public class Zone : MonoBehaviour
     [SerializeField] Collider[] buildingArray;
     [SerializeField] Collider[] subBuildingArray;
 
+    [SerializeField] bool canChangeColorRoof = false;
 
     public enum STATE { Neutral, AI, Player }
 
     [SerializeField] STATE zoneState;
 
-
+    STATE lastState;
     // Update is called once per frame
     void LateUpdate()
     {
@@ -65,8 +61,22 @@ public class Zone : MonoBehaviour
         foreach (Collider col in buildingArray)
         {
             col.transform.gameObject.GetComponent<Building>().buildingState = zoneState;
-        }
 
+            if (canChangeColorRoof)
+            {
+                if (col.transform.gameObject.GetComponent<Building>().buildingState == STATE.Player)
+                {
+                    col.transform.GetChild(2).GetChild(1).GetChild(1).gameObject.SetActive(true);
+                    col.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(false);
+
+                }
+                if (col.transform.gameObject.GetComponent<Building>().buildingState == STATE.AI)
+                {
+                    col.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(true);
+                    col.transform.GetChild(2).GetChild(1).GetChild(1).gameObject.SetActive(false);
+                }
+            }
+        }
     }
     #endregion
 
@@ -78,6 +88,21 @@ public class Zone : MonoBehaviour
         foreach (Collider col in subBuildingArray)
         {
             col.transform.gameObject.GetComponent<Building_boost>().boostBuildingState = zoneState;
+
+            if (canChangeColorRoof)
+            {
+                if (col.transform.gameObject.GetComponent<Building_boost>().boostBuildingState == STATE.Player)
+                {
+                    col.transform.GetChild(2).GetChild(1).GetChild(1).gameObject.SetActive(true);
+                    col.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(false);
+
+                }
+                if (col.transform.gameObject.GetComponent<Building_boost>().boostBuildingState == STATE.AI)
+                {
+                    col.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(true);
+                    col.transform.GetChild(2).GetChild(1).GetChild(1).gameObject.SetActive(false);
+                }
+            }
         }
 
     }
