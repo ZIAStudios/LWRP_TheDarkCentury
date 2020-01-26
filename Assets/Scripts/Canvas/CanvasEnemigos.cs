@@ -6,6 +6,7 @@ public class CanvasEnemigos : MonoBehaviour
 {
     public GameObject general;
     public GameObject panel_enemigos;
+    public Pergamino pergamino;
     void Start()
     {
         
@@ -21,7 +22,8 @@ public class CanvasEnemigos : MonoBehaviour
         if (col.gameObject.name == "General")
         {
             panel_enemigos.SetActive(true);
-            Time.timeScale = 0f;
+            pergamino.texto3.SetActive(true);
+            
 
             Destroy(gameObject);
         }

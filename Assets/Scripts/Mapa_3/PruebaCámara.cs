@@ -111,4 +111,9 @@ public class PruebaCámara : MonoBehaviour
         cameraSequencia.SetActive(false);
         canvasTimer.SetActive(true);
     }
+
+    void Mapa1Texto1()
+    {
+        canvasTexto.SetActive(true);
+    }
 }

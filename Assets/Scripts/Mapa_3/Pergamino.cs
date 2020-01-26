@@ -86,4 +86,21 @@ public class Pergamino : MonoBehaviour
         camaraSequencia.Jugar();
     }
    
+    public void Mapa1PostText1()
+    {
+        camaraSequencia.cameraNormal.SetActive(true);
+        camaraSequencia.cameraSequencia.SetActive(false);
+        texto2.SetActive(true);
+        texto1.SetActive(false);
+    }
+    public void DesactivaTexto2()
+    {
+        texto2.SetActive(false);
+        canvasPergamino.SetActive(false);
+    }
+   public void Desactivar3()
+    {
+        texto3.SetActive(false);
+        canvasPergamino.SetActive(false);
+    }
 }
