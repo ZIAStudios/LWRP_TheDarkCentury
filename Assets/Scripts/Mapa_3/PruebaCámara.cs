@@ -19,6 +19,8 @@ public class PruebaCámara : MonoBehaviour
     //public GameObject UI;
     void Start()
     {
+        cameraNormal.SetActive(false);
+        cameraSequencia.SetActive(true);
         //StartCoroutine(Sequencia());
     }
 
