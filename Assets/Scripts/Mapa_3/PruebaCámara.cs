@@ -12,6 +12,8 @@ public class PruebaCámara : MonoBehaviour
     public GameObject cameraNormal;
     public Pergamino pergamino;
     public GameObject canvasTexto;
+    public GameObject canvasTimer;
+    public GameObject audioManager;
 
     
     //public GameObject UI;
@@ -43,6 +45,7 @@ public class PruebaCámara : MonoBehaviour
     void TextoInterfaz ()
     {
         canvasTexto.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto1");
         //UI.SetActive(true);
     }
 
@@ -64,6 +67,8 @@ public class PruebaCámara : MonoBehaviour
     }
     void Texto3Act()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto2");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto3");
         canvasTexto.SetActive(true);
         pergamino.texto2.SetActive(false);
         pergamino.texto3.SetActive(true);
@@ -71,12 +76,15 @@ public class PruebaCámara : MonoBehaviour
 
     void Texto4Act()
     {
+        
         canvasTexto.SetActive(true);
         pergamino.texto3.SetActive(false);
         pergamino.texto4.SetActive(true);
     }
     void Texto6Act()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto5");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto6");
         canvasTexto.SetActive(true);
         pergamino.texto5.SetActive(false);
         pergamino.texto6.SetActive(true);
@@ -101,5 +109,6 @@ public class PruebaCámara : MonoBehaviour
     {
         cameraNormal.SetActive(true);
         cameraSequencia.SetActive(false);
+        canvasTimer.SetActive(true);
     }
 }

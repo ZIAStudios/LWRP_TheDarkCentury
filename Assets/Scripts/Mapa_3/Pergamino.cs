@@ -37,6 +37,8 @@ public class Pergamino : MonoBehaviour
 
     public void Siguiente()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto1");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto2");
         texto2.SetActive(true);
         texto1.SetActive(false);
     }
@@ -49,12 +51,16 @@ public class Pergamino : MonoBehaviour
     }
     public void SequenciaTres()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto3");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto4");
         canvasPergamino.SetActive(false);
         paso3 = true;
         camaraSequencia.Secuencia3Mapa2();
     }
     public void Pasarde4a5()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto4");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto5");
         texto4.SetActive(false);
         texto5.SetActive(true);
     }
@@ -66,11 +72,15 @@ public class Pergamino : MonoBehaviour
     }
     public void Pasarde6a7()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto6");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto7");
         texto6.SetActive(false);
         texto7.SetActive(true);
     }
     public void EndCinema()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa2Texto7");
+        FindObjectOfType<AudioManager>().Play("Mapa2Texto8");
         texto7.SetActive(false);
         texto8.SetActive(true);
         camaraSequencia.Jugar();

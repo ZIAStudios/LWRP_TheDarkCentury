@@ -23,6 +23,8 @@ public class Colision : MonoBehaviour
         {
             Destroy(this.gameObject);
             canvasPergamino.SetActive(false);
+            FindObjectOfType<AudioManager>().Stop("Mapa2Texto8");
+            FindObjectOfType<AudioManager>().Play("Mapa2AuidioAnimo");
         }
     }
 }
