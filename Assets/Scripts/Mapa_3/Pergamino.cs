@@ -17,6 +17,7 @@ public class Pergamino : MonoBehaviour
     public GameObject texto6;
     public GameObject texto7;
     public GameObject texto8;
+    public static bool Nivel1 = false;
     
     
     public bool paso3 = false;
@@ -105,6 +106,13 @@ public class Pergamino : MonoBehaviour
     {
         texto3.SetActive(false);
         canvasPergamino.SetActive(false);
+    }
+
+    public void VolverMenu()
+    {
+        SceneManager.LoadScene("SelectorNiveles");
+        Nivel1 = true;
+        
     }
     public void PasardeNivel()
     {

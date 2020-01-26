@@ -23,7 +23,7 @@ public class EmpezarNivel : MonoBehaviour
 
             camaraSequencia.cameraNormal.SetActive(false);
             camaraSequencia.cameraSequencia.SetActive(true);
-            
+            camaraSequencia.anim.Play("Prueba");
            
             Destroy(gameObject);
         }

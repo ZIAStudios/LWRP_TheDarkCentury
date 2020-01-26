@@ -21,12 +21,14 @@ public class PruebaCámara : MonoBehaviour
     {
         cameraNormal.SetActive(false);
         cameraSequencia.SetActive(true);
+        anim.Play("Prueba");
         //StartCoroutine(Sequencia());
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         animator.SetBool("Pergamino", canvasTexto);
 
         if (canvasTexto.activeInHierarchy == false)

@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     public void Play()
     {
-        SceneManager.LoadScene("Mapa_2");
+        SceneManager.LoadScene("SelectorNiveles");
     }
 
     public void Instrucciones ()
