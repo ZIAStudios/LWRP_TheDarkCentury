@@ -39,6 +39,8 @@ public class Pergamino : MonoBehaviour
 
     public void Siguiente()
     {
+        FindObjectOfType<AudioManager>().Stop("Mapa3Texto1");
+        FindObjectOfType<AudioManager>().Play("Mapa3Texto2");
         FindObjectOfType<AudioManager>().Stop("Mapa2Texto1");
         FindObjectOfType<AudioManager>().Play("Mapa2Texto2");
         texto2.SetActive(true);

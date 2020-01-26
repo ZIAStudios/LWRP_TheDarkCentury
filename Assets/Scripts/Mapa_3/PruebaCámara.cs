@@ -49,6 +49,7 @@ public class PruebaCámara : MonoBehaviour
     void TextoInterfaz ()
     {
         canvasTexto.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Mapa3Texto1");
         FindObjectOfType<AudioManager>().Play("Mapa2Texto1");
         //UI.SetActive(true);
     }
@@ -58,8 +59,15 @@ public class PruebaCámara : MonoBehaviour
         if (canvasTexto.activeInHierarchy == false)
         {
             print("Canvas texto falso, Sequencia 2¿?");
+            Invoke("Mapa3Audio1", 11);
             anim.Play("Sequencia_2");
         }
+    }
+
+    public void Mapa3Audio1()
+    {
+        FindObjectOfType<AudioManager>().Stop("Mapa3Texto2");
+        FindObjectOfType<AudioManager>().Play("Mapa3Audio1");
     }
     public void SecuenciaDosMapa2()
     {
