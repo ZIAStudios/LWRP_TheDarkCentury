@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 1404874515238576960}
   - component: {fileID: 1404874515238576967}
   - component: {fileID: 1404874515238576966}
-  - component: {fileID: 1404874515238576965}
+  - component: {fileID: -2513214890791070553}
   m_Layer: 10
   m_Name: P_Espadero
   m_TagString: P_Caballero
@@ -246,7 +246,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 11
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -357,7 +357,7 @@ MonoBehaviour:
   pos4: 0
   pos5: 0
   positionsInUse: 0
---- !u!114 &1404874515238576965
+--- !u!114 &-2513214890791070553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,18 +366,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404874515238576964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4ef7e0c4f243241b00e0bb90d31a16, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b1b0fe84e60cd44a753e3de30ebf71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maskToChase:
     serializedVersion: 2
     m_Bits: 2048
   currentTarget: {fileID: 0}
+  toMovePoint: {fileID: 0}
   onAttackPoint: 0
   alertRadius: 15
-  knockbackForce: 0
+  knockbackForce: 10
   ignoreStates: 0
-  hardMoving: 0
+  clickOnEnemy: 0
   state: 0
 --- !u!1 &1404874515354290086
 GameObject:

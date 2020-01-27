@@ -15,7 +15,7 @@ public class PruebaCámara : MonoBehaviour
     public GameObject canvasTimer;
     public GameObject audioManager;
 
-    
+
     //public GameObject UI;
     void Start()
     {
@@ -28,14 +28,14 @@ public class PruebaCámara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         animator.SetBool("Pergamino", canvasTexto);
 
         if (canvasTexto.activeInHierarchy == false)
         {
-            Debug.Log("Canvas texto falso, Sequencia 2¿?");         
+            Debug.Log("Canvas texto falso, Sequencia 2¿?");
         }
-        
+
     }
 
     /*IEnumerator Sequencia ()
@@ -46,7 +46,7 @@ public class PruebaCámara : MonoBehaviour
         cameraNormal.SetActive(true);
     }*/
 
-    void TextoInterfaz ()
+    void TextoInterfaz()
     {
         canvasTexto.SetActive(true);
         FindObjectOfType<AudioManager>().Play("Mapa3Texto1");
@@ -54,7 +54,7 @@ public class PruebaCámara : MonoBehaviour
         //UI.SetActive(true);
     }
 
-    public void SecuenciaDos ()
+    public void SecuenciaDos()
     {
         if (canvasTexto.activeInHierarchy == false)
         {
@@ -88,7 +88,7 @@ public class PruebaCámara : MonoBehaviour
 
     void Texto4Act()
     {
-        
+
         canvasTexto.SetActive(true);
         pergamino.texto3.SetActive(false);
         pergamino.texto4.SetActive(true);
@@ -103,7 +103,7 @@ public class PruebaCámara : MonoBehaviour
     }
     public void Secuencia3Mapa2()
     {
-        if(pergamino.paso3 == true)
+        if (pergamino.paso3 == true)
         {
             anim.Play("Mapa2_Secuencia3");
         }
@@ -131,6 +131,12 @@ public class PruebaCámara : MonoBehaviour
     }
 
     void AcabarCinematica2Mapa1()
+    {
+        cameraNormal.SetActive(true);
+        cameraSequencia.SetActive(false);
+    }
+
+    public void JugarMapa3()
     {
         cameraNormal.SetActive(true);
         cameraSequencia.SetActive(false);
