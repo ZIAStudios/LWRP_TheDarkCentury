@@ -17,6 +17,7 @@ public class Pergamino : MonoBehaviour
     public GameObject texto6;
     public GameObject texto7;
     public GameObject texto8;
+    public GameObject texto9;
     public static bool Nivel1 = false;
     
     
@@ -120,4 +121,6 @@ public class Pergamino : MonoBehaviour
     {
         SceneManager.LoadScene("Mapa_2");
     }
+
+   
 }

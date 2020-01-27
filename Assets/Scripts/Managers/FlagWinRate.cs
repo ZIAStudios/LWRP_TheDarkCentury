@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FlagWinRate : MonoBehaviour
 {
+    Pergamino texto;
     [SerializeField] float height = 50f;
+
 
     public LayerMask flagLayer;
 
@@ -29,6 +31,8 @@ public class FlagWinRate : MonoBehaviour
         {
             if (flagArray[0].gameObject.GetComponent<Flag>().flagState == Zone.STATE.Player && flagArray[1].gameObject.GetComponent<Flag>().flagState == Zone.STATE.Player && flagArray[2].gameObject.GetComponent<Flag>().flagState == Zone.STATE.Player)
             {
+                texto.canvasPergamino.SetActive(true);
+                texto.texto9.SetActive(true);
                 //PONER AQUI QUE SE QUIERA QUE PASE CUANDO CAPTURE LAS 3 BANDERAS
                 print("esto esta");
             }
