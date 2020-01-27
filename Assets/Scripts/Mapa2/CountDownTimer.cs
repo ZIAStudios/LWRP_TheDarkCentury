@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CountDownTimer : MonoBehaviour
 {
     float currentTime = 1;
-    float startingTime = 10;
+    float startingTime = 220;
     //[SerializeField] NavMeshAgent soldier;
     [SerializeField]Text countdownText;
     [SerializeField] GameObject target;
@@ -56,7 +56,7 @@ public class CountDownTimer : MonoBehaviour
 
     void Mover()
     {
-        if(currentTime <= 5)
+        if(currentTime <= 120)
         {
             
             foreach(NavMeshAgent soldier in enemy1)
@@ -68,7 +68,7 @@ public class CountDownTimer : MonoBehaviour
            // countdownText.text = time2.ToString();
             //time2 -= 1 * Time.deltaTime;
         }
-        if(currentTime <= 3)
+        if(currentTime <= 60)
         {
             foreach (NavMeshAgent soldier in enemy2)
             {
@@ -79,7 +79,7 @@ public class CountDownTimer : MonoBehaviour
             //countdownText.text = time3.ToString();
             //time3 -= 1 * Time.deltaTime;
         }
-        if (currentTime <= 1)
+        if (currentTime <= 0)
         {
             foreach (NavMeshAgent soldier in enemy3)
             {

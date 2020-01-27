@@ -113,7 +113,7 @@ public class Pergamino : MonoBehaviour
 
     public void VolverMenu()
     {
-        SceneManager.LoadScene("SelectorNiveles");
+        SceneManager.LoadScene("Menu");
         Nivel1 = true;
         
     }

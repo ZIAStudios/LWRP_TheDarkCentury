@@ -18,14 +18,12 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     public void Play()
     {
-        SceneManager.LoadScene("SelectorNiveles");
+        SceneManager.LoadScene("Diseño_1");
     }
 
     public void Instrucciones ()
     {
-        MenuPrincipal.SetActive(false);
-        soldados.SetActive(false);
-        MenuInstrucciones.SetActive(true);
+        SceneManager.LoadScene("Mapa_2");
     }
 
     public void Back ()
